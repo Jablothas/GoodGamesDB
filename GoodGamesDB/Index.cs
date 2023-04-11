@@ -52,6 +52,14 @@ namespace GoodGamesDB
         public static List<string> GamesList = new List<string>();
         // Dictonary for SteamData.cs
         public static Dictionary<string, string> DictGamesList = new Dictionary<string, string>();
+        // Make Panel_Title dragable when click & hold
+        // --------------------------------------------------------------------------------------|
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         /* GLOBAL CONSTANTS
          * -----------------------------------------------------------------------------
@@ -338,10 +346,10 @@ namespace GoodGamesDB
             Message.Text = msg;
             //if (model == 1) Message.Text = "✔️ " + msg;
             Message.Location = new Point(30, 1);
-            //Message.TextAlign = ContentAlignment.MiddleLeft;
+            Message.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             Message.Size = new Size(800, 20);
             Message.ForeColor = ForeColor;
-            //Message.TextAlign = ContentAlignment.MiddleLeft;
+            Message.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             Panel_Notify.Controls.Add(Message);
 
             await Task.Delay(duration);
@@ -385,12 +393,14 @@ namespace GoodGamesDB
         // When user stops resizing window
         private void ResizeWindow(object sender, EventArgs e)
         {
+            /*
             PnlDataBody.Visible = true;
             WindowSizeW = this.Size.Width;
             WindowSizeH = this.Size.Height;
             Log.Write(Status, $"Window size changed. GridView cleared.");
             CleanUpGlobals();
             GridView();
+            */
         }
 
         // Triggered during the user is changing size
@@ -442,75 +452,6 @@ namespace GoodGamesDB
 
             }
         }
-        // Hilfsmethode von Stackoverflow, damit gifs transparenten Hintergrund haben.
-        // Wird zur Zeit nicht genutzt.
-        // https://stackoverflow.com/questions/6495952/how-can-i-save-a-gif-with-a-transparent-background
-        public static Bitmap MakeTransparentGif(Bitmap bitmap, Color color)
-        {
-            byte R = color.R;
-            byte G = color.G;
-            byte B = color.B;
-            MemoryStream fin = new MemoryStream();
-            bitmap.Save(fin, System.Drawing.Imaging.ImageFormat.Gif);
-            MemoryStream fout = new MemoryStream((int)fin.Length);
-            int count = 0;
-            byte[] buf = new byte[256];
-            byte transparentIdx = 0;
-            fin.Seek(0, SeekOrigin.Begin);
-            //header  
-            count = fin.Read(buf, 0, 13);
-            if ((buf[0] != 71) || (buf[1] != 73) || (buf[2] != 70)) return null; //GIF  
-            fout.Write(buf, 0, 13);
-            int i = 0;
-            if ((buf[10] & 0x80) > 0)
-            {
-                i = 1 << ((buf[10] & 7) + 1) == 256 ? 256 : 0;
-            }
-            for (; i != 0; i--)
-            {
-                fin.Read(buf, 0, 3);
-                if ((buf[0] == R) && (buf[1] == G) && (buf[2] == B))
-                {
-                    transparentIdx = (byte)(256 - i);
-                }
-                fout.Write(buf, 0, 3);
-            }
-            bool gcePresent = false;
-            while (true)
-            {
-                fin.Read(buf, 0, 1);
-                fout.Write(buf, 0, 1);
-                if (buf[0] != 0x21) break;
-                fin.Read(buf, 0, 1);
-                fout.Write(buf, 0, 1);
-                gcePresent = (buf[0] == 0xf9);
-                while (true)
-                {
-                    fin.Read(buf, 0, 1);
-                    fout.Write(buf, 0, 1);
-                    if (buf[0] == 0) break;
-                    count = buf[0];
-                    if (fin.Read(buf, 0, count) != count) return null;
-                    if (gcePresent)
-                    {
-                        if (count == 4)
-                        {
-                            buf[0] |= 0x01;
-                            buf[3] = transparentIdx;
-                        }
-                    }
-                    fout.Write(buf, 0, count);
-                }
-            }
-            while (count > 0)
-            {
-                count = fin.Read(buf, 0, 1);
-                fout.Write(buf, 0, 1);
-            }
-            fin.Close();
-            fout.Flush();
-            return new Bitmap(fout);
-        }
 
         private void BtnMiniApp_MouseEnter(object sender, EventArgs e)
         {
@@ -542,6 +483,12 @@ namespace GoodGamesDB
         private void BtnMiniApp_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Panel_Header_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
     }
 }

@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             Panel_Header = new Panel();
+            panel3 = new Panel();
+            textBoxSearch = new TextBox();
+            label5 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             label3 = new Label();
@@ -40,7 +43,6 @@
             BtnCloseApp = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            textBoxSearch = new TextBox();
             button3 = new Button();
             button2 = new Button();
             PnlHeaderSplitter = new Panel();
@@ -50,6 +52,7 @@
             textBox1 = new TextBox();
             PnlBottom = new Panel();
             Panel_Header.SuspendLayout();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicBoxLogo).BeginInit();
             PnlHeader_RightNav.SuspendLayout();
@@ -61,13 +64,13 @@
             // Panel_Header
             // 
             Panel_Header.BackColor = Color.FromArgb(12, 12, 12);
+            Panel_Header.Controls.Add(panel3);
             Panel_Header.Controls.Add(panel2);
             Panel_Header.Controls.Add(label3);
             Panel_Header.Controls.Add(label2);
             Panel_Header.Controls.Add(PicBoxLogo);
             Panel_Header.Controls.Add(PnlHeader_RightNav);
             Panel_Header.Controls.Add(panel1);
-            Panel_Header.Controls.Add(textBoxSearch);
             Panel_Header.Controls.Add(button3);
             Panel_Header.Controls.Add(button2);
             Panel_Header.Controls.Add(PnlHeaderSplitter);
@@ -78,6 +81,40 @@
             Panel_Header.Name = "Panel_Header";
             Panel_Header.Size = new Size(1490, 62);
             Panel_Header.TabIndex = 0;
+            Panel_Header.MouseMove += Panel_Header_MouseMove;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(12, 12, 12);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(textBoxSearch);
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(214, 19);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(395, 25);
+            panel3.TabIndex = 13;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.BackColor = Color.FromArgb(12, 12, 12);
+            textBoxSearch.BorderStyle = BorderStyle.None;
+            textBoxSearch.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxSearch.ForeColor = Color.DimGray;
+            textBoxSearch.Location = new Point(8, 4);
+            textBoxSearch.Margin = new Padding(0);
+            textBoxSearch.MinimumSize = new Size(0, 25);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(395, 25);
+            textBoxSearch.TabIndex = 0;
+            textBoxSearch.TextChanged += txtBox_Search_TextChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 4);
+            label5.Name = "label5";
+            label5.Size = new Size(0, 16);
+            label5.TabIndex = 0;
             // 
             // panel2
             // 
@@ -180,20 +217,6 @@
             label1.Size = new Size(32, 16);
             label1.TabIndex = 0;
             label1.Text = "Nav";
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(12, 12, 12);
-            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSearch.ForeColor = Color.WhiteSmoke;
-            textBoxSearch.Location = new Point(213, 19);
-            textBoxSearch.Margin = new Padding(0);
-            textBoxSearch.MinimumSize = new Size(0, 25);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(395, 25);
-            textBoxSearch.TabIndex = 0;
-            textBoxSearch.TextChanged += txtBox_Search_TextChanged;
             // 
             // button3
             // 
@@ -318,6 +341,8 @@
             Resize += Index_SizeChanged;
             Panel_Header.ResumeLayout(false);
             Panel_Header.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicBoxLogo).EndInit();
@@ -351,5 +376,7 @@
         private Panel panel2;
         private Label label4;
         private PictureBox BtnMiniApp;
+        private Panel panel3;
+        private Label label5;
     }
 }
