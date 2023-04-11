@@ -7,11 +7,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <PlatformTarget>x64</PlatformTarget>
-    <ApplicationIcon>ggdb.ico</ApplicationIcon>
+    <ApplicationIcon>bin\Debug\net6.0-windows\img\logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="ggdb.ico" />
+    <Content Include="bin\Debug\net6.0-windows\img\logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
