@@ -117,6 +117,18 @@ namespace GoodGamesDB
         {
             switch (value)
             {
+                case 0:
+                    sfield1.Image = Image.FromFile(empty);
+                    sfield2.Image = Image.FromFile(empty);
+                    sfield3.Image = Image.FromFile(empty);
+                    sfield4.Image = Image.FromFile(empty);
+                    sfield5.Image = Image.FromFile(empty);
+                    sfield6.Image = Image.FromFile(empty);
+                    sfield7.Image = Image.FromFile(empty);
+                    sfield8.Image = Image.FromFile(empty);
+                    sfield9.Image = Image.FromFile(empty);
+                    sfield10.Image = Image.FromFile(empty);
+                    break;
                 case 1:
                     sfield1.Image = Image.FromFile(full);
                     sfield2.Image = Image.FromFile(empty);

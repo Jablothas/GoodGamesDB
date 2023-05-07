@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
-            Panel_Header = new Panel();
+            PnlHeader = new Panel();
             panel3 = new Panel();
             textBoxSearch = new TextBox();
             label5 = new Label();
@@ -48,10 +48,11 @@
             PnlHeaderSplitter = new Panel();
             BtnAdd = new Button();
             PnlDataBody = new Panel();
+            PnlBottomSpacer = new Panel();
             button1 = new Button();
             textBox1 = new TextBox();
             PnlBottom = new Panel();
-            Panel_Header.SuspendLayout();
+            PnlHeader.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicBoxLogo).BeginInit();
@@ -59,29 +60,30 @@
             ((System.ComponentModel.ISupportInitialize)BtnMiniApp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).BeginInit();
             panel1.SuspendLayout();
+            PnlDataBody.SuspendLayout();
             SuspendLayout();
             // 
-            // Panel_Header
+            // PnlHeader
             // 
-            Panel_Header.BackColor = Color.FromArgb(12, 12, 12);
-            Panel_Header.Controls.Add(panel3);
-            Panel_Header.Controls.Add(panel2);
-            Panel_Header.Controls.Add(label3);
-            Panel_Header.Controls.Add(label2);
-            Panel_Header.Controls.Add(PicBoxLogo);
-            Panel_Header.Controls.Add(PnlHeader_RightNav);
-            Panel_Header.Controls.Add(panel1);
-            Panel_Header.Controls.Add(button3);
-            Panel_Header.Controls.Add(button2);
-            Panel_Header.Controls.Add(PnlHeaderSplitter);
-            Panel_Header.Controls.Add(BtnAdd);
-            Panel_Header.Dock = DockStyle.Top;
-            Panel_Header.Location = new Point(0, 0);
-            Panel_Header.Margin = new Padding(4);
-            Panel_Header.Name = "Panel_Header";
-            Panel_Header.Size = new Size(1490, 62);
-            Panel_Header.TabIndex = 0;
-            Panel_Header.MouseMove += Panel_Header_MouseMove;
+            PnlHeader.BackColor = Color.FromArgb(12, 12, 12);
+            PnlHeader.Controls.Add(panel3);
+            PnlHeader.Controls.Add(panel2);
+            PnlHeader.Controls.Add(label3);
+            PnlHeader.Controls.Add(label2);
+            PnlHeader.Controls.Add(PicBoxLogo);
+            PnlHeader.Controls.Add(PnlHeader_RightNav);
+            PnlHeader.Controls.Add(panel1);
+            PnlHeader.Controls.Add(button3);
+            PnlHeader.Controls.Add(button2);
+            PnlHeader.Controls.Add(PnlHeaderSplitter);
+            PnlHeader.Controls.Add(BtnAdd);
+            PnlHeader.Dock = DockStyle.Top;
+            PnlHeader.Location = new Point(0, 0);
+            PnlHeader.Margin = new Padding(4);
+            PnlHeader.Name = "PnlHeader";
+            PnlHeader.Size = new Size(1490, 65);
+            PnlHeader.TabIndex = 0;
+            PnlHeader.MouseMove += Panel_Header_MouseMove;
             // 
             // panel3
             // 
@@ -171,7 +173,7 @@
             PnlHeader_RightNav.Dock = DockStyle.Right;
             PnlHeader_RightNav.Location = new Point(1374, 0);
             PnlHeader_RightNav.Name = "PnlHeader_RightNav";
-            PnlHeader_RightNav.Size = new Size(116, 61);
+            PnlHeader_RightNav.Size = new Size(116, 64);
             PnlHeader_RightNav.TabIndex = 8;
             // 
             // BtnMiniApp
@@ -204,19 +206,21 @@
             // 
             panel1.BackColor = Color.DimGray;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(621, 19);
+            panel1.Location = new Point(776, 19);
             panel1.Name = "panel1";
             panel1.Size = new Size(46, 25);
             panel1.TabIndex = 7;
+            panel1.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(7, 4);
+            label1.Location = new Point(11, 5);
             label1.Name = "label1";
             label1.Size = new Size(32, 16);
             label1.TabIndex = 0;
             label1.Text = "Nav";
+            label1.Visible = false;
             // 
             // button3
             // 
@@ -226,7 +230,7 @@
             button3.FlatAppearance.MouseDownBackColor = Color.DimGray;
             button3.FlatAppearance.MouseOverBackColor = Color.DimGray;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(800, 19);
+            button3.Location = new Point(1022, 20);
             button3.Name = "button3";
             button3.Size = new Size(100, 25);
             button3.TabIndex = 3;
@@ -234,6 +238,7 @@
             button3.Text = "Settings";
             button3.TextAlign = ContentAlignment.TopCenter;
             button3.UseVisualStyleBackColor = false;
+            button3.Visible = false;
             // 
             // button2
             // 
@@ -243,19 +248,20 @@
             button2.FlatAppearance.MouseDownBackColor = Color.DimGray;
             button2.FlatAppearance.MouseOverBackColor = Color.DimGray;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(699, 19);
+            button2.Location = new Point(921, 20);
             button2.Name = "button2";
             button2.Size = new Size(100, 25);
             button2.TabIndex = 2;
             button2.Text = "Numbers";
             button2.TextAlign = ContentAlignment.TopCenter;
             button2.UseVisualStyleBackColor = false;
+            button2.Visible = false;
             // 
             // PnlHeaderSplitter
             // 
             PnlHeaderSplitter.BackColor = Color.White;
             PnlHeaderSplitter.Dock = DockStyle.Bottom;
-            PnlHeaderSplitter.Location = new Point(0, 61);
+            PnlHeaderSplitter.Location = new Point(0, 64);
             PnlHeaderSplitter.Name = "PnlHeaderSplitter";
             PnlHeaderSplitter.Size = new Size(1490, 1);
             PnlHeaderSplitter.TabIndex = 1;
@@ -269,7 +275,7 @@
             BtnAdd.FlatAppearance.MouseDownBackColor = Color.DimGray;
             BtnAdd.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnAdd.FlatStyle = FlatStyle.Flat;
-            BtnAdd.Location = new Point(668, 19);
+            BtnAdd.Location = new Point(615, 19);
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(30, 25);
             BtnAdd.TabIndex = 1;
@@ -281,12 +287,22 @@
             // PnlDataBody
             // 
             PnlDataBody.BackColor = Color.FromArgb(30, 33, 35);
+            PnlDataBody.Controls.Add(PnlBottomSpacer);
             PnlDataBody.Dock = DockStyle.Left;
-            PnlDataBody.Location = new Point(0, 62);
+            PnlDataBody.Location = new Point(0, 65);
             PnlDataBody.Margin = new Padding(0);
             PnlDataBody.Name = "PnlDataBody";
-            PnlDataBody.Size = new Size(1003, 680);
+            PnlDataBody.Size = new Size(775, 677);
             PnlDataBody.TabIndex = 1;
+            // 
+            // PnlBottomSpacer
+            // 
+            PnlBottomSpacer.BackColor = Color.FromArgb(30, 33, 35);
+            PnlBottomSpacer.Dock = DockStyle.Bottom;
+            PnlBottomSpacer.Location = new Point(0, 642);
+            PnlBottomSpacer.Name = "PnlBottomSpacer";
+            PnlBottomSpacer.Size = new Size(775, 35);
+            PnlBottomSpacer.TabIndex = 4;
             // 
             // button1
             // 
@@ -328,7 +344,7 @@
             ClientSize = new Size(1490, 767);
             Controls.Add(PnlDataBody);
             Controls.Add(PnlBottom);
-            Controls.Add(Panel_Header);
+            Controls.Add(PnlHeader);
             Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.Control;
             FormBorderStyle = FormBorderStyle.None;
@@ -339,8 +355,8 @@
             Text = "GG.DB 3.1.0";
             ResizeEnd += ResizeWindow;
             Resize += Index_SizeChanged;
-            Panel_Header.ResumeLayout(false);
-            Panel_Header.PerformLayout();
+            PnlHeader.ResumeLayout(false);
+            PnlHeader.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -351,12 +367,13 @@
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            PnlDataBody.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel Panel_Header;
+        private Panel PnlHeader;
         private Panel PnlDataBody;
         private Button button1;
         private TextBox textBox1;
@@ -378,5 +395,6 @@
         private PictureBox BtnMiniApp;
         private Panel panel3;
         private Label label5;
+        private Panel PnlBottomSpacer;
     }
 }

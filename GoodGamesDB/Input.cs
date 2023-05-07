@@ -26,7 +26,7 @@ namespace GoodGamesDB
         int PlaythroughCount = 0;
         int Day = 0;
         int Month = 0;
-        int Year = 0;    
+        int Year = 0;
         bool IsReplay = false;
         string Note = string.Empty;
         string AdditionalContent = string.Empty;
@@ -69,7 +69,7 @@ namespace GoodGamesDB
         private void WriteToDatabase()
         {
             // if we handle non-steam game
-            if(Appid == "" || Appid == null) 
+            if (Appid == "" || Appid == null)
             {
                 Appid = "0";
             }
@@ -140,7 +140,7 @@ namespace GoodGamesDB
         private void LoadGameInfo(string game)
         {
             DataRow[]? info = Index.Data.Select("name like '%" + game + "%'");
-            foreach(DataRow row in info)
+            foreach (DataRow row in info)
             {
                 // Load cover and prepare it for data writing
                 pictureBoxCover.Image = Image.FromFile($"img/grid/{row["img"].ToString()}");
@@ -307,7 +307,7 @@ namespace GoodGamesDB
                     {
                         AdditionalContent += $"{item};!";
                     }
-                    if(AdditionalContent == null) AdditionalContent = string.Empty;
+                    if (AdditionalContent == null) AdditionalContent = string.Empty;
                     WriteToDatabase();
                     // Sent confirmation details to parent form
                     Index.LatestNewEntry = $"{Name}";
@@ -350,10 +350,20 @@ namespace GoodGamesDB
             this.Close();
         }
 
-        private decimal CountSum()
+        public decimal CountSum()
         {
+            // if we disable a rating we still need to count it as a 10 internally. 
+            int n = 0;
+            if (Rate_Gameplay.Value == 0) n += 10;
+            if (Rate_Presentation.Value == 0) n += 10;
+            if (Rate_Narrative.Value == 0) n += 10;
+            if (Rate_Quality.Value == 0) n += 10;
+            if (Rate_Sound.Value == 0) n += 10;
+            if (Rate_Content.Value == 0) n += 10;
+            if (Rate_Pacing.Value == 0) n += 10;
+            if (Rate_Balance.Value == 0) n += 10;
             SumScore = Rate_Gameplay.Value + Rate_Presentation.Value + Rate_Narrative.Value + Rate_Quality.Value +
-            Rate_Sound.Value + Rate_Content.Value + Rate_Pacing.Value + Rate_Balance.Value + Rate_Impression.Value + 10;
+            Rate_Sound.Value + Rate_Content.Value + Rate_Pacing.Value + Rate_Balance.Value + Rate_Impression.Value + 10 + n;
             //Lbl_SumScore.Text = SumScore + "";
             return SumScore;
         }
@@ -486,7 +496,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxGameplay.Checked)
             {
-                Rate_Gameplay.Value = 10;
+                Rate_Gameplay.Value = 0;
                 Rate_Gameplay.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -496,6 +506,7 @@ namespace GoodGamesDB
             else
             {
                 Rate_Gameplay.Enabled = true;
+                Rate_Gameplay.Value = 1;
                 _ = Index.Notify("Gameplay will be rated again.", 1, Index.PnlNotify, 3000);
             }
         }
@@ -504,7 +515,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxPresentation.Checked)
             {
-                Rate_Presentation.Value = 10;
+                Rate_Presentation.Value = 0;
                 Rate_Presentation.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -513,6 +524,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Presentation.Value = 1;
                 Rate_Presentation.Enabled = true;
                 _ = Index.Notify("Presentation will be rated again.", 1, Index.PnlNotify, 3000);
             }
@@ -522,7 +534,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxNarrative.Checked)
             {
-                Rate_Narrative.Value = 10;
+                Rate_Narrative.Value = 0;
                 Rate_Narrative.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -531,6 +543,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Narrative.Value = 1;
                 Rate_Narrative.Enabled = true;
                 _ = Index.Notify("Narrative will be rated again.", 1, Index.PnlNotify, 3000);
             }
@@ -540,7 +553,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxQuality.Checked)
             {
-                Rate_Quality.Value = 10;
+                Rate_Quality.Value = 0;
                 Rate_Quality.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -549,6 +562,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Quality.Value = 1;
                 Rate_Quality.Enabled = true;
                 _ = Index.Notify("Quality will be rated again.", 1, Index.PnlNotify, 3000);
             }
@@ -558,7 +572,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxSound.Checked)
             {
-                Rate_Sound.Value = 10;
+                Rate_Sound.Value = 0;
                 Rate_Sound.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -567,6 +581,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Sound.Value = 1;
                 Rate_Sound.Enabled = true;
                 _ = Index.Notify("Sound will be rated again.", 1, Index.PnlNotify, 3000);
             }
@@ -576,7 +591,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxContent.Checked)
             {
-                Rate_Content.Value = 10;
+                Rate_Content.Value = 0;
                 Rate_Content.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -585,7 +600,8 @@ namespace GoodGamesDB
             }
             else
             {
-                Rate_Quality.Enabled = true;
+                Rate_Content.Value = 1;
+                Rate_Content.Enabled = true;
                 _ = Index.Notify("Content will be rated again.", 1, Index.PnlNotify, 3000);
             }
         }
@@ -594,7 +610,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxPacing.Checked)
             {
-                Rate_Pacing.Value = 10;
+                Rate_Pacing.Value = 0;
                 Rate_Pacing.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -603,6 +619,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Pacing.Value = 1;
                 Rate_Pacing.Enabled = true;
                 _ = Index.Notify("Pacing will be rated again.", 1, Index.PnlNotify, 3000);
             }
@@ -612,7 +629,7 @@ namespace GoodGamesDB
         {
             if (!checkBoxBalance.Checked)
             {
-                Rate_Balance.Value = 10;
+                Rate_Balance.Value = 0;
                 Rate_Balance.Enabled = false;
                 CountSum();
                 ScoreSum.SumUpdate(Convert.ToInt32(SumScore));
@@ -621,6 +638,7 @@ namespace GoodGamesDB
             }
             else
             {
+                Rate_Balance.Value = 1;
                 Rate_Balance.Enabled = true;
                 _ = Index.Notify("Balance will be rated again.", 1, Index.PnlNotify, 3000);
             }

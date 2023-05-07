@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Security.Cryptography;
 using Microsoft.VisualBasic.Logging;
+using System.Windows.Forms;
 
 namespace GoodGamesDB
 {
@@ -88,11 +89,13 @@ namespace GoodGamesDB
                     break;
             }
             // Set panel attributes
+            p.Name = $"GameObj_{id}";
             p.Size = new Size(Index.PnlWidth, Index.PnlHeight);
             p.Location = new Point(x, y);
             p.BackColor = Color.FromArgb(15, 15, 15);
             p.MouseEnter += new EventHandler(MouseEnterOnPanel);
             p.MouseLeave += new EventHandler(MouseLeaveOnPanel);
+            p.Click += new EventHandler(MouseClick);
 
             // Cover of game
             PictureBox c = new PictureBox();
@@ -228,6 +231,16 @@ namespace GoodGamesDB
         private void MouseLeaveOnPanel(object sender, EventArgs e)
         {
             p.BackColor = Color.FromArgb(15, 15, 15);
+        }
+
+        private void MouseClick(object sender, EventArgs e)
+        {
+            InfoTab.CurrentItemID = id;
+            InfoTab.CurrentItemName = name;
+            InfoTab.CurrentItemRId = rId;
+            InfoTab.CurrentItemReplayStatus = replay;
+            InfoTab tab = new InfoTab();
+            tab.ShowDialog();
         }
     }
 }

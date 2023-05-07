@@ -13,6 +13,8 @@ using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Drawing.Imaging;
 using System.Windows.Forms.VisualStyles;
+using System.Security.Cryptography;
+using System.Xml.Linq;
 
 namespace GoodGamesDB
 {
@@ -53,7 +55,6 @@ namespace GoodGamesDB
         // Dictonary for SteamData.cs
         public static Dictionary<string, string> DictGamesList = new Dictionary<string, string>();
         // Make Panel_Title dragable when click & hold
-        // --------------------------------------------------------------------------------------|
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
@@ -270,27 +271,12 @@ namespace GoodGamesDB
             }
 
         }
-
-        public Dictionary<int, int> GamesPerYear2()
+        public static void ExtMouseClick(object sender, EventArgs e, Panel header)
         {
-            int y = 0;
-            int i = 0;
-            Dictionary<int, int> GamesPerYearList = new Dictionary<int, int>();
-            foreach (DataRow dr in Data.Rows)
+            if (sender is Panel p)
             {
-                if (y == 0) y = Convert.ToDateTime(dr[0]).Year;
-                if (y == Convert.ToDateTime(dr[0]).Year)
-                {
-                    i++;
-                }
-                else
-                {
-                    GamesPerYearList.Add(Convert.ToDateTime(dr[0]).Year, i);
-                    i = 0;
-                    y = Convert.ToDateTime(dr[0]).Year;
-                }
+                MessageBox.Show(p.Name);
             }
-            return GamesPerYearList;
         }
 
         public int GamesPerYear(int y)
