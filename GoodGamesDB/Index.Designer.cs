@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             PnlHeader = new Panel();
+            BtnReload = new Button();
             panel3 = new Panel();
             textBoxSearch = new TextBox();
             label5 = new Label();
@@ -41,8 +42,6 @@
             PnlHeader_RightNav = new Panel();
             BtnMiniApp = new PictureBox();
             BtnCloseApp = new PictureBox();
-            panel1 = new Panel();
-            label1 = new Label();
             button3 = new Button();
             button2 = new Button();
             PnlHeaderSplitter = new Panel();
@@ -59,20 +58,19 @@
             PnlHeader_RightNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnMiniApp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).BeginInit();
-            panel1.SuspendLayout();
             PnlDataBody.SuspendLayout();
             SuspendLayout();
             // 
             // PnlHeader
             // 
             PnlHeader.BackColor = Color.FromArgb(12, 12, 12);
+            PnlHeader.Controls.Add(BtnReload);
             PnlHeader.Controls.Add(panel3);
             PnlHeader.Controls.Add(panel2);
             PnlHeader.Controls.Add(label3);
             PnlHeader.Controls.Add(label2);
             PnlHeader.Controls.Add(PicBoxLogo);
             PnlHeader.Controls.Add(PnlHeader_RightNav);
-            PnlHeader.Controls.Add(panel1);
             PnlHeader.Controls.Add(button3);
             PnlHeader.Controls.Add(button2);
             PnlHeader.Controls.Add(PnlHeaderSplitter);
@@ -84,6 +82,23 @@
             PnlHeader.Size = new Size(1490, 65);
             PnlHeader.TabIndex = 0;
             PnlHeader.MouseMove += Panel_Header_MouseMove;
+            // 
+            // BtnReload
+            // 
+            BtnReload.BackColor = Color.FromArgb(12, 12, 12);
+            BtnReload.CausesValidation = false;
+            BtnReload.FlatAppearance.BorderColor = Color.DimGray;
+            BtnReload.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            BtnReload.FlatAppearance.MouseOverBackColor = Color.DimGray;
+            BtnReload.FlatStyle = FlatStyle.Flat;
+            BtnReload.Location = new Point(651, 19);
+            BtnReload.Name = "BtnReload";
+            BtnReload.Size = new Size(100, 25);
+            BtnReload.TabIndex = 14;
+            BtnReload.Text = "Reload";
+            BtnReload.TextAlign = ContentAlignment.TopCenter;
+            BtnReload.UseVisualStyleBackColor = false;
+            BtnReload.Click += BtnReload_Click;
             // 
             // panel3
             // 
@@ -142,9 +157,9 @@
             label3.ForeColor = Color.FromArgb(187, 187, 187);
             label3.Location = new Point(58, 33);
             label3.Name = "label3";
-            label3.Size = new Size(41, 16);
+            label3.Size = new Size(49, 16);
             label3.TabIndex = 11;
-            label3.Text = "3.0.1";
+            label3.Text = "0.14.1";
             // 
             // label2
             // 
@@ -202,26 +217,6 @@
             BtnCloseApp.MouseEnter += BtnCloseApp_MouseEnter;
             BtnCloseApp.MouseLeave += BtnCloseApp_MouseLeave;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.DimGray;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(776, 19);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(46, 25);
-            panel1.TabIndex = 7;
-            panel1.Visible = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(11, 5);
-            label1.Name = "label1";
-            label1.Size = new Size(32, 16);
-            label1.TabIndex = 0;
-            label1.Text = "Nav";
-            label1.Visible = false;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(12, 12, 12);
@@ -248,7 +243,7 @@
             button2.FlatAppearance.MouseDownBackColor = Color.DimGray;
             button2.FlatAppearance.MouseOverBackColor = Color.DimGray;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(921, 20);
+            button2.Location = new Point(916, 20);
             button2.Name = "button2";
             button2.Size = new Size(100, 25);
             button2.TabIndex = 2;
@@ -365,8 +360,6 @@
             PnlHeader_RightNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)BtnMiniApp).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             PnlDataBody.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -383,8 +376,6 @@
         private Button BtnAdd;
         private Button button3;
         private Button button2;
-        private Panel panel1;
-        private Label label1;
         private Panel PnlHeader_RightNav;
         private PictureBox BtnCloseApp;
         private PictureBox PicBoxLogo;
@@ -396,5 +387,6 @@
         private Panel panel3;
         private Label label5;
         private Panel PnlBottomSpacer;
+        private Button BtnReload;
     }
 }

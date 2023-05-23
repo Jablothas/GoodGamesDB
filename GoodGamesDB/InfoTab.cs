@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,11 @@ namespace GoodGamesDB
         public static int CurrentItemReplayStatus = 0;
         public static DataRow[]? Item;
         public static bool EditMode = false;
+        public static string RecordDate;
+        public static string Day;
+        public static string Month;
+        public static string Year;
+        public static string Cover_Path = string.Empty;
         VisualScore VisualScoreGameplay = new VisualScore();
         VisualScore VisualScorePresentation = new VisualScore();
         VisualScore VisualScoreNarrative = new VisualScore();
@@ -42,9 +48,48 @@ namespace GoodGamesDB
         private void LoadData()
         {
             Item = Index.Data.Select($"ID = {CurrentItemID}");
+            CurrentItemRId = Convert.ToInt32(Item[0]["rId"]);
+            string LogoID = string.Empty;
+            // Load Cover
+            Cover_Path = $"{Item[0]["img"]}";
+            // Replay-Status
+            if (Item[0]["replay"].ToString() == "1")
+            {
+                CurrentItemReplayStatus = 1;
+            }
             // Cover
             PicBoxCover.Image = Image.FromFile($"img/grid/{Item[0]["img"]}");
             PicBoxCover.SizeMode = PictureBoxSizeMode.Zoom;
+            // Logo from location
+            switch (Item[0]["location"].ToString().ToUpper())
+            {
+                case "STEAM":
+                    LogoID = "1";
+                    break;
+                case "UPLAY":
+                    LogoID = "2";
+                    break;
+                case "XBOX GAME PASS":
+                    LogoID = "3";
+                    break;
+                case "EPIC GAMES":
+                    LogoID = "4";
+                    break;
+                case "NINTENDO SWITCH":
+                    LogoID = "5";
+                    break;
+                default:
+                    LogoID = "0";
+                    break;
+            }
+            // Record date
+            RecordDate = Convert.ToDateTime(Item[0]["date"]).ToShortDateString();
+            Lbl_Date.Text = $"Record from {RecordDate}";
+            PicLocation.Image = Image.FromFile($"img/locations/{LogoID}.png");
+            // Split date
+            Day = RecordDate.Substring(0, 2);
+            Month = RecordDate.Substring(3, 2);
+            Year = RecordDate.Substring(6, 4);
             // Name
             Lbl_Name.Text = Item[0]["name"].ToString();
             // Total score
@@ -97,6 +142,7 @@ namespace GoodGamesDB
             }
         }
 
+
         private void PnlContent_MouseMove(object sender, MouseEventArgs e)
         {
             Index.ReleaseCapture();
@@ -140,14 +186,23 @@ namespace GoodGamesDB
                 BtnSaveChanges2.BringToFront();
                 BtnDelete.Visible = true;
                 BtnEditCover.Visible = true;
-                BtnEditDate.Visible = true;
-                BtnEditLocation.Visible = true;
                 // Hide score
                 Pnl_HideScore.Visible = true;
                 Pnl_HideScore.BringToFront();
                 // Change name
                 Edit_Name.Visible = true;
                 Edit_Name.Text = Item[0]["name"].ToString();
+                // Change date
+                Pnl_HideDate.Visible = true;
+                textBoxDay.Visible = true;
+                textBoxDay.Text = Day;
+                textBoxMonth.Visible = true;
+                textBoxMonth.Text = Month;
+                textBoxYear.Visible = true;
+                textBoxYear.Text = Year;
+                textBoxDay.BringToFront();
+                textBoxMonth.BringToFront();
+                textBoxYear.BringToFront();
                 // Change gameplay score
                 Rate_Gameplay.Visible = true;
                 Rate_Gameplay.Value = Convert.ToInt32(Item[0]["gameplay"]);
@@ -419,6 +474,149 @@ namespace GoodGamesDB
                 Rate_Balance.Enabled = true;
                 _ = Index.Notify("Balance will be rated again.", 1, Index.PnlNotify, 3000);
             }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            BtnDeleteConfirm.Visible = true;
+            BtnCancel.BringToFront();
+            BtnCancel.Visible = true;
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            BtnDeleteConfirm.Visible = false;
+            BtnCancel.Visible = false;
+        }
+
+        private void BtnDeleteConfirm_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(@"Data source = database.db");
+            conn.Open();
+            string query = "";
+            try
+            {
+                if (CurrentItemReplayStatus == 1)
+                {
+                    // Delete record, but not infos, cause duplicate
+                    query = $"DELETE FROM records WHERE id = '{CurrentItemID}'";
+                    SQLiteCommand InsertSQL = new SQLiteCommand(query, conn);
+                    InsertSQL = new SQLiteCommand(query, conn);
+                    InsertSQL.ExecuteNonQuery();
+                }
+                if (CurrentItemReplayStatus == 0)
+                {
+                    // Delete record
+                    query = $"DELETE FROM records WHERE id = '{CurrentItemID}'";
+                    SQLiteCommand InsertSQL = new SQLiteCommand(query, conn);
+                    InsertSQL = new SQLiteCommand(query, conn);
+                    InsertSQL.ExecuteNonQuery();
+
+                    // Delete information cause unique
+                    query = $"DELETE FROM infos WHERE rId = '{CurrentItemRId}'";
+                    SQLiteCommand InsertSQL2 = new SQLiteCommand(query, conn);
+                    InsertSQL2 = new SQLiteCommand(query, conn);
+                    InsertSQL2.ExecuteNonQuery();
+                }
+                _ = Index.Notify($"{CurrentItemName} has been deleted.", 1, Index.PnlNotify);
+            }
+            catch
+            {
+                _ = Index.Notify($"Couldn't delete {CurrentItemName}.", 3, Index.PnlNotify);
+            }
+            conn.Close();
+            this.Close();
+        }
+
+        private void textBoxDay_Leave(object sender, EventArgs e)
+        {
+            textBoxDay.Text = Input.CheckForSingleDigitInDate(textBoxDay.Text);
+        }
+
+        private void textBoxMonth_Leave(object sender, EventArgs e)
+        {
+            textBoxMonth.Text = Input.CheckForSingleDigitInDate(textBoxMonth.Text);
+        }
+
+        private void BtnEditCover_Click(object sender, EventArgs e)
+        {
+            Random rng = new Random();
+            string filePath = "";
+            if (Edit_Name.Text != "")
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.InitialDirectory = @"C:\";
+                    openFileDialog.Filter = "Files|*.jpg;*.jpeg;*.png;";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        filePath = openFileDialog.FileName;
+                        string targetPath = @$"{(Edit_Name.Text.Substring(0, 3).ToUpper() + DateTime.Now.Millisecond.ToString() + rng.Next(10000, 99999))}.png";
+                        MessageBox.Show(targetPath);
+                        File.Copy(filePath, @$"img\grid\{targetPath}");
+                        PicBoxCover.Image = Image.FromFile(@$"img\grid\{targetPath}");
+                        // Set new cover
+                        Cover_Path = targetPath;
+
+                    }
+                }
+            }
+            else
+            {
+                _ = Index.Notify("Please add a game title before set picture", 3, Index.PnlNotify, 3000);
+            }
+        }
+
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(@"Data source = database.db");
+            conn.Open();
+            string query = "";
+            try
+            {
+                // Delete record, but not infos, cause duplicate
+                if (Edit_Name.Text.Contains('\'')) Edit_Name.Text.Replace("\'", "´");
+                if (Edit_Note.Text.Contains('\'')) Edit_Name.Text.Replace("\'", "´");
+                query = $"UPDATE records " +
+                    $"SET " +
+                    $"name = '{Edit_Name.Text}', " +
+                    $"date = '{(textBoxYear.Text)}-{(textBoxMonth.Text)}-{(textBoxDay.Text)}', " +
+                    $"note = '{Edit_Note.Text}' " +
+                    $"WHERE id = '{CurrentItemID}'";
+                SQLiteCommand InsertSQL = new SQLiteCommand(query, conn);
+                InsertSQL = new SQLiteCommand(query, conn);
+                InsertSQL.ExecuteNonQuery();
+                // TO DO! UPDATE INFOS DONT WORK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                query = $"UPDATE infos " +
+                    $"SET " +
+                    $"gameplay = '{Rate_Gameplay.Value}', " +
+                    $"presentation = '{Rate_Presentation.Value}', " +
+                    $"narrative = '{Rate_Narrative.Value}', " +
+                    $"quality = '{Rate_Quality.Value}', " +
+                    $"sound = '{Rate_Sound.Value}', " +
+                    $"content = '{Rate_Content.Value}', " +
+                    $"pacing = '{Rate_Pacing.Value}', " +
+                    $"balance = '{Rate_Balance.Value}', " +
+                    $"impression = '{Rate_Impression.Value}', " +
+                    $"sum = '{SumScore}', " +
+                    $"img = '{Cover_Path}' " +
+                    $"WHERE rId = '{CurrentItemRId}'";              
+                SQLiteCommand InsertSQL2 = new SQLiteCommand(query, conn);
+                InsertSQL2 = new SQLiteCommand(query, conn);
+                InsertSQL2.ExecuteNonQuery();
+                _ = Index.Notify($"{CurrentItemName} has been edited.", 1, Index.PnlNotify);
+            }
+            catch (Exception ex)
+            {
+                Log.Write(1, ex.ToString());
+                _ = Index.Notify($"Couldn't edit {CurrentItemName}.", 3, Index.PnlNotify);
+            }
+            conn.Close();
+            EditMode = false;
+            this.Close();
         }
     }
 }

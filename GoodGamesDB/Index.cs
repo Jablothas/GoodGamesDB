@@ -86,7 +86,7 @@ namespace GoodGamesDB
             textBoxSearch.TextAlign = HorizontalAlignment.Left;
         }
 
-        private void Start()
+        public void Start()
         {
             BuildDataTable();
             if (ViewOption == 1) GridView();
@@ -475,6 +475,14 @@ namespace GoodGamesDB
         {
             ReleaseCapture();
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void BtnReload_Click(object sender, EventArgs e)
+        {
+            Data.Clear();
+            BuildDataTable();
+            CleanUpGlobals();
+            GridView();
         }
     }
 }

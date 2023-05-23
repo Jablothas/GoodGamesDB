@@ -30,11 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoTab));
             PnlContent = new Panel();
+            textBoxYear = new ComboBox();
+            textBoxMonth = new ComboBox();
+            textBoxDay = new ComboBox();
+            Pnl_HideDate = new Panel();
+            Lbl_Date = new Label();
+            BtnCancel = new Button();
+            BtnDeleteConfirm = new Button();
             BtnSaveChanges2 = new PictureBox();
             BtnSaveChanges = new Button();
             BtnDelete = new Button();
-            BtnEditDate = new Button();
-            BtnEditLocation = new Button();
             BtnEditCover = new Button();
             PicLocation = new PictureBox();
             Pnl_HideScore = new Panel();
@@ -93,11 +98,16 @@
             // PnlContent
             // 
             PnlContent.BorderStyle = BorderStyle.FixedSingle;
+            PnlContent.Controls.Add(textBoxYear);
+            PnlContent.Controls.Add(textBoxMonth);
+            PnlContent.Controls.Add(textBoxDay);
+            PnlContent.Controls.Add(Pnl_HideDate);
+            PnlContent.Controls.Add(Lbl_Date);
+            PnlContent.Controls.Add(BtnCancel);
+            PnlContent.Controls.Add(BtnDeleteConfirm);
             PnlContent.Controls.Add(BtnSaveChanges2);
             PnlContent.Controls.Add(BtnSaveChanges);
             PnlContent.Controls.Add(BtnDelete);
-            PnlContent.Controls.Add(BtnEditDate);
-            PnlContent.Controls.Add(BtnEditLocation);
             PnlContent.Controls.Add(BtnEditCover);
             PnlContent.Controls.Add(PicLocation);
             PnlContent.Controls.Add(Pnl_HideScore);
@@ -143,6 +153,97 @@
             PnlContent.TabIndex = 0;
             PnlContent.MouseMove += PnlContent_MouseMove;
             // 
+            // textBoxYear
+            // 
+            textBoxYear.AutoCompleteMode = AutoCompleteMode.Append;
+            textBoxYear.AutoCompleteSource = AutoCompleteSource.ListItems;
+            textBoxYear.BackColor = SystemColors.ScrollBar;
+            textBoxYear.FlatStyle = FlatStyle.Flat;
+            textBoxYear.FormattingEnabled = true;
+            textBoxYear.Items.AddRange(new object[] { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029" });
+            textBoxYear.Location = new Point(533, 420);
+            textBoxYear.Name = "textBoxYear";
+            textBoxYear.Size = new Size(103, 22);
+            textBoxYear.TabIndex = 159;
+            textBoxYear.Visible = false;
+            // 
+            // textBoxMonth
+            // 
+            textBoxMonth.AutoCompleteMode = AutoCompleteMode.Append;
+            textBoxMonth.AutoCompleteSource = AutoCompleteSource.ListItems;
+            textBoxMonth.BackColor = SystemColors.ScrollBar;
+            textBoxMonth.FlatStyle = FlatStyle.Flat;
+            textBoxMonth.FormattingEnabled = true;
+            textBoxMonth.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
+            textBoxMonth.Location = new Point(467, 420);
+            textBoxMonth.Name = "textBoxMonth";
+            textBoxMonth.Size = new Size(60, 22);
+            textBoxMonth.TabIndex = 158;
+            textBoxMonth.Visible = false;
+            textBoxMonth.Leave += textBoxMonth_Leave;
+            // 
+            // textBoxDay
+            // 
+            textBoxDay.AutoCompleteMode = AutoCompleteMode.Append;
+            textBoxDay.AutoCompleteSource = AutoCompleteSource.ListItems;
+            textBoxDay.BackColor = SystemColors.ScrollBar;
+            textBoxDay.FlatStyle = FlatStyle.Flat;
+            textBoxDay.FormattingEnabled = true;
+            textBoxDay.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
+            textBoxDay.Location = new Point(401, 420);
+            textBoxDay.Name = "textBoxDay";
+            textBoxDay.Size = new Size(60, 22);
+            textBoxDay.TabIndex = 157;
+            textBoxDay.Visible = false;
+            textBoxDay.Leave += textBoxDay_Leave;
+            // 
+            // Pnl_HideDate
+            // 
+            Pnl_HideDate.Location = new Point(401, 422);
+            Pnl_HideDate.Name = "Pnl_HideDate";
+            Pnl_HideDate.Size = new Size(128, 20);
+            Pnl_HideDate.TabIndex = 160;
+            Pnl_HideDate.Visible = false;
+            // 
+            // Lbl_Date
+            // 
+            Lbl_Date.AutoSize = true;
+            Lbl_Date.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Lbl_Date.ForeColor = SystemColors.ScrollBar;
+            Lbl_Date.Location = new Point(313, 422);
+            Lbl_Date.Name = "Lbl_Date";
+            Lbl_Date.Size = new Size(165, 16);
+            Lbl_Date.TabIndex = 156;
+            Lbl_Date.Text = "Record from 00.00.0000";
+            // 
+            // BtnCancel
+            // 
+            BtnCancel.BackColor = Color.LightYellow;
+            BtnCancel.FlatStyle = FlatStyle.Popup;
+            BtnCancel.Location = new Point(734, 357);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(135, 23);
+            BtnCancel.TabIndex = 155;
+            BtnCancel.Text = "Cancel";
+            BtnCancel.TextAlign = ContentAlignment.MiddleLeft;
+            BtnCancel.UseVisualStyleBackColor = false;
+            BtnCancel.Visible = false;
+            BtnCancel.Click += BtnCancel_Click;
+            // 
+            // BtnDeleteConfirm
+            // 
+            BtnDeleteConfirm.BackColor = Color.IndianRed;
+            BtnDeleteConfirm.FlatStyle = FlatStyle.Popup;
+            BtnDeleteConfirm.Location = new Point(734, 386);
+            BtnDeleteConfirm.Name = "BtnDeleteConfirm";
+            BtnDeleteConfirm.Size = new Size(135, 23);
+            BtnDeleteConfirm.TabIndex = 154;
+            BtnDeleteConfirm.Text = "Confirm Delete";
+            BtnDeleteConfirm.TextAlign = ContentAlignment.MiddleLeft;
+            BtnDeleteConfirm.UseVisualStyleBackColor = false;
+            BtnDeleteConfirm.Visible = false;
+            BtnDeleteConfirm.Click += BtnDeleteConfirm_Click;
+            // 
             // BtnSaveChanges2
             // 
             BtnSaveChanges2.Image = (Image)resources.GetObject("BtnSaveChanges2.Image");
@@ -158,66 +259,43 @@
             // 
             BtnSaveChanges.BackColor = Color.FromArgb(33, 191, 146);
             BtnSaveChanges.FlatStyle = FlatStyle.Popup;
-            BtnSaveChanges.Location = new Point(770, 419);
+            BtnSaveChanges.Location = new Point(734, 419);
             BtnSaveChanges.Name = "BtnSaveChanges";
-            BtnSaveChanges.Size = new Size(99, 23);
+            BtnSaveChanges.Size = new Size(135, 23);
             BtnSaveChanges.TabIndex = 153;
-            BtnSaveChanges.Text = "Save      ";
+            BtnSaveChanges.Text = "Save Changes";
             BtnSaveChanges.TextAlign = ContentAlignment.MiddleLeft;
             BtnSaveChanges.UseVisualStyleBackColor = false;
             BtnSaveChanges.Visible = false;
+            BtnSaveChanges.Click += BtnSaveChanges_Click;
             // 
             // BtnDelete
             // 
             BtnDelete.BackColor = SystemColors.ScrollBar;
             BtnDelete.FlatStyle = FlatStyle.Popup;
-            BtnDelete.Location = new Point(769, 386);
+            BtnDelete.Location = new Point(734, 357);
             BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(101, 23);
+            BtnDelete.Size = new Size(136, 23);
             BtnDelete.TabIndex = 152;
-            BtnDelete.Text = "Delete        ";
+            BtnDelete.Text = "Delete Entry   ";
             BtnDelete.TextAlign = ContentAlignment.MiddleLeft;
             BtnDelete.UseVisualStyleBackColor = false;
             BtnDelete.Visible = false;
-            // 
-            // BtnEditDate
-            // 
-            BtnEditDate.BackColor = SystemColors.ScrollBar;
-            BtnEditDate.FlatStyle = FlatStyle.Popup;
-            BtnEditDate.Location = new Point(769, 299);
-            BtnEditDate.Name = "BtnEditDate";
-            BtnEditDate.Size = new Size(101, 23);
-            BtnEditDate.TabIndex = 151;
-            BtnEditDate.Text = "Edit Date";
-            BtnEditDate.TextAlign = ContentAlignment.MiddleLeft;
-            BtnEditDate.UseVisualStyleBackColor = false;
-            BtnEditDate.Visible = false;
-            // 
-            // BtnEditLocation
-            // 
-            BtnEditLocation.BackColor = SystemColors.ScrollBar;
-            BtnEditLocation.FlatStyle = FlatStyle.Popup;
-            BtnEditLocation.Location = new Point(769, 328);
-            BtnEditLocation.Name = "BtnEditLocation";
-            BtnEditLocation.Size = new Size(101, 23);
-            BtnEditLocation.TabIndex = 150;
-            BtnEditLocation.Text = "Edit Location";
-            BtnEditLocation.TextAlign = ContentAlignment.MiddleLeft;
-            BtnEditLocation.UseVisualStyleBackColor = false;
-            BtnEditLocation.Visible = false;
+            BtnDelete.Click += BtnDelete_Click;
             // 
             // BtnEditCover
             // 
             BtnEditCover.BackColor = SystemColors.ScrollBar;
             BtnEditCover.FlatStyle = FlatStyle.Popup;
-            BtnEditCover.Location = new Point(769, 357);
+            BtnEditCover.Location = new Point(734, 328);
             BtnEditCover.Name = "BtnEditCover";
-            BtnEditCover.Size = new Size(101, 23);
+            BtnEditCover.Size = new Size(136, 23);
             BtnEditCover.TabIndex = 149;
-            BtnEditCover.Text = "Edit Cover";
+            BtnEditCover.Text = "Change Cover";
             BtnEditCover.TextAlign = ContentAlignment.MiddleLeft;
             BtnEditCover.UseVisualStyleBackColor = false;
             BtnEditCover.Visible = false;
+            BtnEditCover.Click += BtnEditCover_Click;
             // 
             // PicLocation
             // 
@@ -231,9 +309,9 @@
             // 
             // Pnl_HideScore
             // 
-            Pnl_HideScore.Location = new Point(377, 42);
+            Pnl_HideScore.Location = new Point(378, 44);
             Pnl_HideScore.Name = "Pnl_HideScore";
-            Pnl_HideScore.Size = new Size(376, 43);
+            Pnl_HideScore.Size = new Size(258, 43);
             Pnl_HideScore.TabIndex = 145;
             Pnl_HideScore.Visible = false;
             // 
@@ -243,7 +321,7 @@
             Edit_Note.BorderStyle = BorderStyle.FixedSingle;
             Edit_Note.Location = new Point(351, 355);
             Edit_Note.Name = "Edit_Note";
-            Edit_Note.Size = new Size(285, 87);
+            Edit_Note.Size = new Size(285, 54);
             Edit_Note.TabIndex = 144;
             Edit_Note.Text = "";
             Edit_Note.Visible = false;
@@ -484,7 +562,7 @@
             Edit_Name.BorderStyle = BorderStyle.FixedSingle;
             Edit_Name.Location = new Point(378, 21);
             Edit_Name.Name = "Edit_Name";
-            Edit_Name.Size = new Size(375, 22);
+            Edit_Name.Size = new Size(290, 22);
             Edit_Name.TabIndex = 126;
             Edit_Name.Visible = false;
             // 
@@ -709,14 +787,19 @@
         private NumericUpDown Rate_Narrative;
         private NumericUpDown Rate_Presentation;
         private NumericUpDown Rate_Gameplay;
-        private RichTextBox Edit_Note;
         private Panel Pnl_HideScore;
         private PictureBox BtnSaveChanges2;
         private PictureBox PicLocation;
         private Button BtnSaveChanges;
         private Button BtnDelete;
-        private Button BtnEditDate;
-        private Button BtnEditLocation;
         private Button BtnEditCover;
+        private Button BtnCancel;
+        private Button BtnDeleteConfirm;
+        private RichTextBox Edit_Note;
+        private Label Lbl_Date;
+        private ComboBox textBoxYear;
+        private ComboBox textBoxMonth;
+        private ComboBox textBoxDay;
+        private Panel Pnl_HideDate;
     }
 }

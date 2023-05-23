@@ -644,7 +644,7 @@ namespace GoodGamesDB
             }
         }
 
-        private string CheckForSingleDigitInDate(string s)
+        public static string CheckForSingleDigitInDate(string s)
         {
             if (s.Length == 1) s = "0" + s;
             return s;
