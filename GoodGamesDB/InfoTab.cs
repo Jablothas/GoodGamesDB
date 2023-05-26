@@ -589,7 +589,6 @@ namespace GoodGamesDB
                 SQLiteCommand InsertSQL = new SQLiteCommand(query, conn);
                 InsertSQL = new SQLiteCommand(query, conn);
                 InsertSQL.ExecuteNonQuery();
-                // TO DO! UPDATE INFOS DONT WORK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 query = $"UPDATE infos " +
                     $"SET " +
                     $"gameplay = '{Rate_Gameplay.Value}', " +
