@@ -152,6 +152,7 @@ namespace GoodGamesDB
 
         private void BtnCloseView_Click(object sender, EventArgs e)
         {
+            Index.PlaySound("CLOSE_PANEL");
             this.Dispose();
             this.Close();
             EditMode = false;

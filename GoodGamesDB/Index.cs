@@ -290,15 +290,20 @@ namespace GoodGamesDB
 
         public static void PlaySound(string sound)
         {
+            if (MuteSound) return;
+
             string soundPath = string.Empty;
             switch(sound)
             {
                 case "OPEN_PANEL":
                     soundPath = @"audio\btn_click.wav";
                     break;
+                case "CLOSE_PANEL":
+                    soundPath = @"audio\btn_close.wav";
+                    break;
             }
 
-            if(soundPath != string.Empty)
+            if (soundPath != string.Empty)
             {
                 SoundPlayer simpleSound = new SoundPlayer(soundPath);
                 simpleSound.Play();

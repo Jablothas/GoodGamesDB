@@ -269,7 +269,7 @@
             textBoxImagePath.BackColor = Color.WhiteSmoke;
             textBoxImagePath.BorderStyle = BorderStyle.FixedSingle;
             textBoxImagePath.ForeColor = Color.Black;
-            textBoxImagePath.Location = new Point(842, 12);
+            textBoxImagePath.Location = new Point(436, 22);
             textBoxImagePath.Margin = new Padding(25, 3, 3, 3);
             textBoxImagePath.Name = "textBoxImagePath";
             textBoxImagePath.Size = new Size(323, 22);
