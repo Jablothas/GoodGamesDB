@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             PnlHeader = new Panel();
-            BtnReload = new Button();
             panel3 = new Panel();
             textBoxSearch = new TextBox();
             label5 = new Label();
-            panel2 = new Panel();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             PicBoxLogo = new PictureBox();
             PnlHeader_RightNav = new Panel();
+            mainMenuSettings = new PictureBox();
             BtnMiniApp = new PictureBox();
             BtnCloseApp = new PictureBox();
+            mainMenuAdd = new PictureBox();
+            mainMenuReload = new PictureBox();
+            PnlHeaderSplitter = new Panel();
+            BtnReload = new Button();
             button3 = new Button();
             button2 = new Button();
-            PnlHeaderSplitter = new Panel();
             BtnAdd = new Button();
             PnlDataBody = new Panel();
             PnlBottomSpacer = new Panel();
@@ -53,28 +54,25 @@
             PnlBottom = new Panel();
             PnlHeader.SuspendLayout();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicBoxLogo).BeginInit();
             PnlHeader_RightNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)mainMenuSettings).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnMiniApp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mainMenuAdd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mainMenuReload).BeginInit();
             PnlDataBody.SuspendLayout();
             SuspendLayout();
             // 
             // PnlHeader
             // 
             PnlHeader.BackColor = Color.FromArgb(12, 12, 12);
-            PnlHeader.Controls.Add(BtnReload);
             PnlHeader.Controls.Add(panel3);
-            PnlHeader.Controls.Add(panel2);
             PnlHeader.Controls.Add(label3);
             PnlHeader.Controls.Add(label2);
             PnlHeader.Controls.Add(PicBoxLogo);
             PnlHeader.Controls.Add(PnlHeader_RightNav);
-            PnlHeader.Controls.Add(button3);
-            PnlHeader.Controls.Add(button2);
             PnlHeader.Controls.Add(PnlHeaderSplitter);
-            PnlHeader.Controls.Add(BtnAdd);
             PnlHeader.Dock = DockStyle.Top;
             PnlHeader.Location = new Point(0, 0);
             PnlHeader.Margin = new Padding(4);
@@ -83,32 +81,15 @@
             PnlHeader.TabIndex = 0;
             PnlHeader.MouseMove += Panel_Header_MouseMove;
             // 
-            // BtnReload
-            // 
-            BtnReload.BackColor = Color.FromArgb(12, 12, 12);
-            BtnReload.CausesValidation = false;
-            BtnReload.FlatAppearance.BorderColor = Color.DimGray;
-            BtnReload.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            BtnReload.FlatAppearance.MouseOverBackColor = Color.DimGray;
-            BtnReload.FlatStyle = FlatStyle.Flat;
-            BtnReload.Location = new Point(651, 19);
-            BtnReload.Name = "BtnReload";
-            BtnReload.Size = new Size(100, 25);
-            BtnReload.TabIndex = 14;
-            BtnReload.Text = "Reload";
-            BtnReload.TextAlign = ContentAlignment.TopCenter;
-            BtnReload.UseVisualStyleBackColor = false;
-            BtnReload.Click += BtnReload_Click;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(12, 12, 12);
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(textBoxSearch);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(214, 19);
+            panel3.Location = new Point(142, 19);
             panel3.Name = "panel3";
-            panel3.Size = new Size(395, 25);
+            panel3.Size = new Size(414, 25);
             panel3.TabIndex = 13;
             // 
             // textBoxSearch
@@ -133,24 +114,6 @@
             label5.Size = new Size(0, 16);
             label5.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.DimGray;
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(145, 19);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(67, 25);
-            panel2.TabIndex = 12;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(7, 4);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 16);
-            label4.TabIndex = 0;
-            label4.Text = "Search";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -159,7 +122,7 @@
             label3.Name = "label3";
             label3.Size = new Size(49, 16);
             label3.TabIndex = 11;
-            label3.Text = "0.14.1";
+            label3.Text = "3.17.1";
             // 
             // label2
             // 
@@ -183,20 +146,36 @@
             // 
             // PnlHeader_RightNav
             // 
+            PnlHeader_RightNav.Controls.Add(mainMenuSettings);
             PnlHeader_RightNav.Controls.Add(BtnMiniApp);
             PnlHeader_RightNav.Controls.Add(BtnCloseApp);
+            PnlHeader_RightNav.Controls.Add(mainMenuAdd);
+            PnlHeader_RightNav.Controls.Add(mainMenuReload);
             PnlHeader_RightNav.Dock = DockStyle.Right;
-            PnlHeader_RightNav.Location = new Point(1374, 0);
+            PnlHeader_RightNav.Location = new Point(906, 0);
             PnlHeader_RightNav.Name = "PnlHeader_RightNav";
-            PnlHeader_RightNav.Size = new Size(116, 64);
+            PnlHeader_RightNav.Size = new Size(584, 64);
             PnlHeader_RightNav.TabIndex = 8;
+            // 
+            // mainMenuSettings
+            // 
+            mainMenuSettings.Image = (Image)resources.GetObject("mainMenuSettings.Image");
+            mainMenuSettings.Location = new Point(423, 19);
+            mainMenuSettings.Name = "mainMenuSettings";
+            mainMenuSettings.Size = new Size(25, 25);
+            mainMenuSettings.SizeMode = PictureBoxSizeMode.StretchImage;
+            mainMenuSettings.TabIndex = 17;
+            mainMenuSettings.TabStop = false;
+            mainMenuSettings.Visible = false;
+            mainMenuSettings.MouseEnter += mainMenuSettings_MouseEnter;
+            mainMenuSettings.MouseLeave += mainMenuSettings_MouseLeave;
             // 
             // BtnMiniApp
             // 
             BtnMiniApp.Image = (Image)resources.GetObject("BtnMiniApp.Image");
-            BtnMiniApp.Location = new Point(40, 15);
+            BtnMiniApp.Location = new Point(516, 19);
             BtnMiniApp.Name = "BtnMiniApp";
-            BtnMiniApp.Size = new Size(30, 30);
+            BtnMiniApp.Size = new Size(25, 25);
             BtnMiniApp.SizeMode = PictureBoxSizeMode.Zoom;
             BtnMiniApp.TabIndex = 1;
             BtnMiniApp.TabStop = false;
@@ -207,15 +186,69 @@
             // BtnCloseApp
             // 
             BtnCloseApp.Image = (Image)resources.GetObject("BtnCloseApp.Image");
-            BtnCloseApp.Location = new Point(74, 15);
+            BtnCloseApp.Location = new Point(547, 20);
             BtnCloseApp.Name = "BtnCloseApp";
-            BtnCloseApp.Size = new Size(30, 30);
+            BtnCloseApp.Size = new Size(23, 23);
             BtnCloseApp.SizeMode = PictureBoxSizeMode.Zoom;
             BtnCloseApp.TabIndex = 0;
             BtnCloseApp.TabStop = false;
             BtnCloseApp.Click += BtnCloseApp_Click;
             BtnCloseApp.MouseEnter += BtnCloseApp_MouseEnter;
             BtnCloseApp.MouseLeave += BtnCloseApp_MouseLeave;
+            // 
+            // mainMenuAdd
+            // 
+            mainMenuAdd.Image = (Image)resources.GetObject("mainMenuAdd.Image");
+            mainMenuAdd.Location = new Point(454, 19);
+            mainMenuAdd.Name = "mainMenuAdd";
+            mainMenuAdd.Size = new Size(25, 25);
+            mainMenuAdd.SizeMode = PictureBoxSizeMode.StretchImage;
+            mainMenuAdd.TabIndex = 15;
+            mainMenuAdd.TabStop = false;
+            mainMenuAdd.Click += BtnAdd_Click;
+            mainMenuAdd.MouseEnter += mainMenuAdd_MouseEnter;
+            mainMenuAdd.MouseLeave += mainMenuAdd_MouseLeave;
+            // 
+            // mainMenuReload
+            // 
+            mainMenuReload.Image = (Image)resources.GetObject("mainMenuReload.Image");
+            mainMenuReload.Location = new Point(485, 19);
+            mainMenuReload.Name = "mainMenuReload";
+            mainMenuReload.Size = new Size(25, 25);
+            mainMenuReload.SizeMode = PictureBoxSizeMode.StretchImage;
+            mainMenuReload.TabIndex = 16;
+            mainMenuReload.TabStop = false;
+            mainMenuReload.Click += BtnReload_Click;
+            mainMenuReload.MouseEnter += mainMenuReload_MouseEnter;
+            mainMenuReload.MouseLeave += mainMenuReload_MouseLeave;
+            // 
+            // PnlHeaderSplitter
+            // 
+            PnlHeaderSplitter.BackColor = Color.White;
+            PnlHeaderSplitter.Dock = DockStyle.Bottom;
+            PnlHeaderSplitter.Location = new Point(0, 64);
+            PnlHeaderSplitter.Name = "PnlHeaderSplitter";
+            PnlHeaderSplitter.Size = new Size(1490, 1);
+            PnlHeaderSplitter.TabIndex = 1;
+            PnlHeaderSplitter.Visible = false;
+            // 
+            // BtnReload
+            // 
+            BtnReload.BackColor = Color.FromArgb(12, 12, 12);
+            BtnReload.CausesValidation = false;
+            BtnReload.FlatAppearance.BorderColor = Color.DimGray;
+            BtnReload.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            BtnReload.FlatAppearance.MouseOverBackColor = Color.DimGray;
+            BtnReload.FlatStyle = FlatStyle.Flat;
+            BtnReload.Location = new Point(162, 308);
+            BtnReload.Name = "BtnReload";
+            BtnReload.Size = new Size(100, 25);
+            BtnReload.TabIndex = 14;
+            BtnReload.Text = "Reload";
+            BtnReload.TextAlign = ContentAlignment.TopCenter;
+            BtnReload.UseVisualStyleBackColor = false;
+            BtnReload.Visible = false;
+            BtnReload.Click += BtnReload_Click;
             // 
             // button3
             // 
@@ -225,7 +258,7 @@
             button3.FlatAppearance.MouseDownBackColor = Color.DimGray;
             button3.FlatAppearance.MouseOverBackColor = Color.DimGray;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(1022, 20);
+            button3.Location = new Point(430, 310);
             button3.Name = "button3";
             button3.Size = new Size(100, 25);
             button3.TabIndex = 3;
@@ -243,7 +276,7 @@
             button2.FlatAppearance.MouseDownBackColor = Color.DimGray;
             button2.FlatAppearance.MouseOverBackColor = Color.DimGray;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(916, 20);
+            button2.Location = new Point(324, 310);
             button2.Name = "button2";
             button2.Size = new Size(100, 25);
             button2.TabIndex = 2;
@@ -251,16 +284,6 @@
             button2.TextAlign = ContentAlignment.TopCenter;
             button2.UseVisualStyleBackColor = false;
             button2.Visible = false;
-            // 
-            // PnlHeaderSplitter
-            // 
-            PnlHeaderSplitter.BackColor = Color.White;
-            PnlHeaderSplitter.Dock = DockStyle.Bottom;
-            PnlHeaderSplitter.Location = new Point(0, 64);
-            PnlHeaderSplitter.Name = "PnlHeaderSplitter";
-            PnlHeaderSplitter.Size = new Size(1490, 1);
-            PnlHeaderSplitter.TabIndex = 1;
-            PnlHeaderSplitter.Visible = false;
             // 
             // BtnAdd
             // 
@@ -270,19 +293,24 @@
             BtnAdd.FlatAppearance.MouseDownBackColor = Color.DimGray;
             BtnAdd.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnAdd.FlatStyle = FlatStyle.Flat;
-            BtnAdd.Location = new Point(615, 19);
+            BtnAdd.Location = new Point(114, 309);
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(30, 25);
             BtnAdd.TabIndex = 1;
             BtnAdd.Text = "+";
             BtnAdd.TextAlign = ContentAlignment.TopCenter;
             BtnAdd.UseVisualStyleBackColor = false;
+            BtnAdd.Visible = false;
             BtnAdd.Click += BtnAdd_Click;
             // 
             // PnlDataBody
             // 
             PnlDataBody.BackColor = Color.FromArgb(30, 33, 35);
             PnlDataBody.Controls.Add(PnlBottomSpacer);
+            PnlDataBody.Controls.Add(BtnReload);
+            PnlDataBody.Controls.Add(BtnAdd);
+            PnlDataBody.Controls.Add(button2);
+            PnlDataBody.Controls.Add(button3);
             PnlDataBody.Dock = DockStyle.Left;
             PnlDataBody.Location = new Point(0, 65);
             PnlDataBody.Margin = new Padding(0);
@@ -354,12 +382,13 @@
             PnlHeader.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicBoxLogo).EndInit();
             PnlHeader_RightNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)mainMenuSettings).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnMiniApp).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnCloseApp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mainMenuAdd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mainMenuReload).EndInit();
             PnlDataBody.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -381,12 +410,13 @@
         private PictureBox PicBoxLogo;
         private Label label3;
         private Label label2;
-        private Panel panel2;
-        private Label label4;
         private PictureBox BtnMiniApp;
         private Panel panel3;
         private Label label5;
         private Panel PnlBottomSpacer;
         private Button BtnReload;
+        private PictureBox mainMenuAdd;
+        private PictureBox mainMenuReload;
+        private PictureBox mainMenuSettings;
     }
 }

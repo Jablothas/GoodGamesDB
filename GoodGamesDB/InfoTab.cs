@@ -70,7 +70,7 @@ namespace GoodGamesDB
                 case "UPLAY":
                     LogoID = "2";
                     break;
-                case "XBOX GAME PASS":
+                case "BATTLE.NET":
                     LogoID = "3";
                     break;
                 case "EPIC GAMES":
@@ -556,7 +556,6 @@ namespace GoodGamesDB
                     {
                         filePath = openFileDialog.FileName;
                         string targetPath = @$"{(Edit_Name.Text.Substring(0, 3).ToUpper() + DateTime.Now.Millisecond.ToString() + rng.Next(10000, 99999))}.png";
-                        MessageBox.Show(targetPath);
                         File.Copy(filePath, @$"img\grid\{targetPath}");
                         PicBoxCover.Image = Image.FromFile(@$"img\grid\{targetPath}");
                         // Set new cover

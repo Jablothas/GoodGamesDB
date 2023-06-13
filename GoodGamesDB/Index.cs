@@ -15,6 +15,7 @@ using System.Drawing.Imaging;
 using System.Windows.Forms.VisualStyles;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using System.Media;
 
 namespace GoodGamesDB
 {
@@ -24,6 +25,7 @@ namespace GoodGamesDB
          * -----------------------------------------------------------------------------
          */
         public static int Status = 0;
+        public static bool MuteSound = false;
         public static bool BackgroundWorksDone = false;
         public static bool CfgFileLoaded = false; // Switches to true if cfg file found and loaded
         public static string User; // Sets the current user name
@@ -286,6 +288,24 @@ namespace GoodGamesDB
             return i;
         }
 
+        public static void PlaySound(string sound)
+        {
+            string soundPath = string.Empty;
+            switch(sound)
+            {
+                case "OPEN_PANEL":
+                    soundPath = @"audio\btn_click.wav";
+                    break;
+            }
+
+            if(soundPath != string.Empty)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(soundPath);
+                simpleSound.Play();
+            }
+
+        }
+
         public static async Task Notify(string msg, int model, Panel p, int duration = 5000)
         {
             /* list of model:
@@ -441,22 +461,22 @@ namespace GoodGamesDB
 
         private void BtnMiniApp_MouseEnter(object sender, EventArgs e)
         {
-            BtnMiniApp.Image = Image.FromFile(@"img/mini2.png");
+            BtnMiniApp.Image = Image.FromFile(@"img/minimize_hover.png");
         }
 
         private void BtnMiniApp_MouseLeave(object sender, EventArgs e)
         {
-            BtnMiniApp.Image = Image.FromFile(@"img/mini.png");
+            BtnMiniApp.Image = Image.FromFile(@"img/minimize.png");
         }
 
         private void BtnCloseApp_MouseEnter(object sender, EventArgs e)
         {
-            BtnCloseApp.Image = Image.FromFile(@"img/close2.png");
+            BtnCloseApp.Image = Image.FromFile(@"img/close_new_hover.png");
         }
 
         private void BtnCloseApp_MouseLeave(object sender, EventArgs e)
         {
-            BtnCloseApp.Image = Image.FromFile(@"img/close.png");
+            BtnCloseApp.Image = Image.FromFile(@"img/close_new.png");
         }
 
         private void BtnCloseApp_Click(object sender, EventArgs e)
@@ -483,6 +503,36 @@ namespace GoodGamesDB
             BuildDataTable();
             CleanUpGlobals();
             GridView();
+        }
+
+        private void mainMenuAdd_MouseEnter(object sender, EventArgs e)
+        {
+            mainMenuAdd.Image = Image.FromFile("img/add_hover.png");
+        }
+
+        private void mainMenuAdd_MouseLeave(object sender, EventArgs e)
+        {
+            mainMenuAdd.Image = Image.FromFile("img/add.png");
+        }
+
+        private void mainMenuReload_MouseEnter(object sender, EventArgs e)
+        {
+            mainMenuReload.Image = Image.FromFile("img/refresh_hover.png");
+        }
+
+        private void mainMenuReload_MouseLeave(object sender, EventArgs e)
+        {
+            mainMenuReload.Image = Image.FromFile("img/refresh.png");
+        }
+
+        private void mainMenuSettings_MouseEnter(object sender, EventArgs e)
+        {
+            mainMenuSettings.Image = Image.FromFile("img/settings_hover.png");
+        }
+
+        private void mainMenuSettings_MouseLeave(object sender, EventArgs e)
+        {
+            mainMenuSettings.Image = Image.FromFile("img/settings.png");
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Xml.Linq;
 using System.Security.Cryptography;
 using Microsoft.VisualBasic.Logging;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Media;
 
 namespace GoodGamesDB
 {
@@ -17,6 +19,7 @@ namespace GoodGamesDB
     {
         // Return object
         private Panel p = new Panel();
+        private Panel borderTop = new Panel();
         // Location
         private int x = 0; // hor-pos from panel
         private int y = 0; // vert-pos from oanel
@@ -97,6 +100,17 @@ namespace GoodGamesDB
             p.MouseLeave += new EventHandler(MouseLeaveOnPanel);
             p.Click += new EventHandler(MouseClick);
 
+            // panel borders
+            borderTop.Dock = DockStyle.Right;
+            borderTop.Size = new Size(1, 1);
+            borderTop.BringToFront();
+            borderTop.BackColor = Color.FromArgb(32, 201, 151);
+            borderTop.Visible = false;
+            p.Controls.Add(borderTop);
+            
+            
+
+
             // Cover of game
             PictureBox c = new PictureBox();
             c.Size = new Size(150, Index.PnlHeight);
@@ -160,7 +174,7 @@ namespace GoodGamesDB
                 case "UPLAY":
                     s.Append("2");
                     break;
-                case "XBOX GAME PASS":
+                case "BATTLE.NET":
                     s.Append("3");
                     break;
                 case "EPIC GAMES":
@@ -225,12 +239,14 @@ namespace GoodGamesDB
 
         private void MouseEnterOnPanel(object sender, EventArgs e)
         {
-            p.BackColor = Color.FromArgb(25, 25, 25);
+            //p.BackColor = Color.FromArgb(25, 25, 25);
+            borderTop.Visible = true;
         }
 
         private void MouseLeaveOnPanel(object sender, EventArgs e)
         {
-            p.BackColor = Color.FromArgb(15, 15, 15);
+            //p.BackColor = Color.FromArgb(15, 15, 15);
+            borderTop.Visible = false;
         }
 
         private void MouseClick(object sender, EventArgs e)
@@ -240,6 +256,7 @@ namespace GoodGamesDB
             InfoTab.CurrentItemRId = rId;
             InfoTab.CurrentItemReplayStatus = replay;
             InfoTab tab = new InfoTab();
+            Index.PlaySound("OPEN_PANEL");
             tab.ShowDialog();
         }
     }
