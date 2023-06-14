@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Input));
             PnlContent = new Panel();
+            BtnCloseInput = new PictureBox();
             PnlHideScores = new Panel();
             BtnReset = new Button();
             checkBoxBalance = new CheckBox();
@@ -76,6 +77,7 @@
             label2 = new Label();
             textBoxGame = new TextBox();
             PnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)BtnCloseInput).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Rate_Impression).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Rate_Balance).BeginInit();
@@ -90,6 +92,7 @@
             // 
             // PnlContent
             // 
+            PnlContent.Controls.Add(BtnCloseInput);
             PnlContent.Controls.Add(PnlHideScores);
             PnlContent.Controls.Add(BtnReset);
             PnlContent.Controls.Add(checkBoxBalance);
@@ -142,6 +145,19 @@
             PnlContent.Size = new Size(1177, 582);
             PnlContent.TabIndex = 0;
             // 
+            // BtnCloseInput
+            // 
+            BtnCloseInput.Image = (Image)resources.GetObject("BtnCloseInput.Image");
+            BtnCloseInput.Location = new Point(1142, 12);
+            BtnCloseInput.Name = "BtnCloseInput";
+            BtnCloseInput.Size = new Size(23, 23);
+            BtnCloseInput.SizeMode = PictureBoxSizeMode.Zoom;
+            BtnCloseInput.TabIndex = 124;
+            BtnCloseInput.TabStop = false;
+            BtnCloseInput.Click += BtnExit_Click;
+            BtnCloseInput.MouseEnter += BtnCloseInput_MouseEnter;
+            BtnCloseInput.MouseLeave += BtnCloseInput_MouseLeave;
+            // 
             // PnlHideScores
             // 
             PnlHideScores.Location = new Point(756, 424);
@@ -158,7 +174,7 @@
             BtnReset.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnReset.FlatStyle = FlatStyle.Flat;
             BtnReset.ForeColor = Color.WhiteSmoke;
-            BtnReset.Location = new Point(365, 525);
+            BtnReset.Location = new Point(482, 516);
             BtnReset.Name = "BtnReset";
             BtnReset.Size = new Size(106, 26);
             BtnReset.TabIndex = 122;
@@ -328,12 +344,13 @@
             BtnExit.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnExit.FlatStyle = FlatStyle.Flat;
             BtnExit.ForeColor = Color.WhiteSmoke;
-            BtnExit.Location = new Point(477, 525);
+            BtnExit.Location = new Point(794, 303);
             BtnExit.Name = "BtnExit";
             BtnExit.Size = new Size(106, 26);
             BtnExit.TabIndex = 108;
             BtnExit.Text = "Exit";
             BtnExit.UseVisualStyleBackColor = false;
+            BtnExit.Visible = false;
             BtnExit.Click += BtnExit_Click;
             // 
             // LblAddContentConfirm
@@ -411,13 +428,13 @@
             // 
             // BtnSave
             // 
-            BtnSave.BackColor = Color.FromArgb(12, 12, 12);
+            BtnSave.BackColor = Color.FromArgb(32, 201, 151);
             BtnSave.FlatAppearance.BorderColor = Color.DimGray;
             BtnSave.FlatAppearance.MouseDownBackColor = Color.DimGray;
             BtnSave.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnSave.FlatStyle = FlatStyle.Flat;
-            BtnSave.ForeColor = Color.WhiteSmoke;
-            BtnSave.Location = new Point(589, 525);
+            BtnSave.ForeColor = Color.Black;
+            BtnSave.Location = new Point(370, 516);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(106, 26);
             BtnSave.TabIndex = 98;
@@ -717,6 +734,7 @@
             Text = "Input";
             PnlContent.ResumeLayout(false);
             PnlContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)BtnCloseInput).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)Rate_Impression).EndInit();
             ((System.ComponentModel.ISupportInitialize)Rate_Balance).EndInit();
@@ -778,5 +796,6 @@
         private CheckBox checkBoxGameplay;
         private Button BtnReset;
         private Panel PnlHideScores;
+        private PictureBox BtnCloseInput;
     }
 }

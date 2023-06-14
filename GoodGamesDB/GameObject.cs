@@ -256,7 +256,7 @@ namespace GoodGamesDB
             InfoTab.CurrentItemRId = rId;
             InfoTab.CurrentItemReplayStatus = replay;
             InfoTab tab = new InfoTab();
-            Index.PlaySound("OPEN_PANEL");
+            AudioEngine.PlaySound("MAIN");
             tab.ShowDialog();
         }
     }

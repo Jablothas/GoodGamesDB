@@ -290,6 +290,7 @@ namespace GoodGamesDB
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             try
             {
                 if (ImageHasBeenSet)
@@ -347,6 +348,7 @@ namespace GoodGamesDB
         }
         private void BtnExit_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             this.Close();
         }
 
@@ -662,9 +664,20 @@ namespace GoodGamesDB
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             this.Close();
             Input window = new Input();
             window.ShowDialog();
+        }
+
+        private void BtnCloseInput_MouseEnter(object sender, EventArgs e)
+        {
+            BtnCloseInput.Image = Image.FromFile("img/close_new_hover.png");
+        }
+
+        private void BtnCloseInput_MouseLeave(object sender, EventArgs e)
+        {
+            BtnCloseInput.Image = Image.FromFile("img/close_new.png");
         }
     }
 }

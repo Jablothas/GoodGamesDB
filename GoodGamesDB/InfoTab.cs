@@ -152,7 +152,7 @@ namespace GoodGamesDB
 
         private void BtnCloseView_Click(object sender, EventArgs e)
         {
-            Index.PlaySound("CLOSE_PANEL");
+            AudioEngine.PlaySound("MAIN");
             this.Dispose();
             this.Close();
             EditMode = false;
@@ -181,6 +181,7 @@ namespace GoodGamesDB
         {
             if (EditMode == false)
             {
+                AudioEngine.PlaySound("MAIN");
                 EditMode = true;
                 // Enable Buttons
                 BtnSaveChanges.Visible = true;
@@ -480,6 +481,7 @@ namespace GoodGamesDB
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             BtnDeleteConfirm.Visible = true;
             BtnCancel.BringToFront();
             BtnCancel.Visible = true;
@@ -487,12 +489,14 @@ namespace GoodGamesDB
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             BtnDeleteConfirm.Visible = false;
             BtnCancel.Visible = false;
         }
 
         private void BtnDeleteConfirm_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             SQLiteConnection conn = new SQLiteConnection(@"Data source = database.db");
             conn.Open();
             string query = "";
@@ -542,6 +546,7 @@ namespace GoodGamesDB
 
         private void BtnEditCover_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             Random rng = new Random();
             string filePath = "";
             if (Edit_Name.Text != "")
@@ -573,6 +578,7 @@ namespace GoodGamesDB
 
         private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             SQLiteConnection conn = new SQLiteConnection(@"Data source = database.db");
             conn.Open();
             string query = "";

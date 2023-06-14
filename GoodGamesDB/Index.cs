@@ -323,7 +323,7 @@ namespace GoodGamesDB
             Panel Panel_Splitter = new Panel();
             Label Message = new Label();
 
-            Color BackColor = Color.FromArgb(129, 186, 106);
+            Color BackColor = Color.FromArgb(32, 201, 151); //Color.FromArgb(129, 186, 106);
             Color ForeColor = Color.Black;
 
             if (model == 2) BackColor = Color.FromArgb(255, 255, 171);
@@ -389,6 +389,7 @@ namespace GoodGamesDB
         {
             if (BackgroundWorksDone == true)
             {
+                AudioEngine.PlaySound("MAIN");
                 Input window = new Input();
                 window.ShowDialog();
                 if (LatestNewEntry != string.Empty) _ = Notify($"{LatestNewEntry} wurde in der Datenbank gespeichert.", 1, PnlBottom);
@@ -486,6 +487,8 @@ namespace GoodGamesDB
 
         private void BtnCloseApp_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
+            System.Threading.Thread.Sleep(1000);
             UserConfig.Save();
             Log.Write(Status, $"Application terminated by user.");
             Application.Exit();
@@ -493,6 +496,7 @@ namespace GoodGamesDB
 
         private void BtnMiniApp_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -504,6 +508,7 @@ namespace GoodGamesDB
 
         private void BtnReload_Click(object sender, EventArgs e)
         {
+            AudioEngine.PlaySound("MAIN");
             Data.Clear();
             BuildDataTable();
             CleanUpGlobals();
