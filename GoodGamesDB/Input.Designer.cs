@@ -490,7 +490,7 @@
             textBoxLocation.BackColor = Color.WhiteSmoke;
             textBoxLocation.FlatStyle = FlatStyle.Flat;
             textBoxLocation.FormattingEnabled = true;
-            textBoxLocation.Items.AddRange(new object[] { "Steam", "Epic Game Store", "Ubisoft Connect", "GOG.com", "Battle.net", "Xbox Game Pass", "Xbox", "PlayStation", "Nintendo Switch", "Mobile" });
+            textBoxLocation.Items.AddRange(new object[] { "Steam", "Epic Game Store", "Ubisoft Connect", "GOG.com", "Battle.net", "Xbox Game Pass", "PlayStation", "Nintendo Switch", "Mobile" });
             textBoxLocation.Location = new Point(370, 171);
             textBoxLocation.Name = "textBoxLocation";
             textBoxLocation.Size = new Size(200, 22);

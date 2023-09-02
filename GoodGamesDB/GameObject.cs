@@ -177,11 +177,14 @@ namespace GoodGamesDB
                 case "BATTLE.NET":
                     s.Append("3");
                     break;
-                case "EPIC GAMES":
+                case "XBOX GAME PASS":
                     s.Append("4");
                     break;
                 case "NINTENDO SWITCH":
                     s.Append("5");
+                    break;
+                case "EPIC GAMES":
+                    s.Append("6");
                     break;
                 default:
                     s.Append("0");

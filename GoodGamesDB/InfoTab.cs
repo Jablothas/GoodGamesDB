@@ -73,11 +73,14 @@ namespace GoodGamesDB
                 case "BATTLE.NET":
                     LogoID = "3";
                     break;
-                case "EPIC GAMES":
+                case "XBOX GAME PASS":
                     LogoID = "4";
                     break;
                 case "NINTENDO SWITCH":
                     LogoID = "5";
+                    break;
+                case "EPIC GAMES":
+                    LogoID = "6";
                     break;
                 default:
                     LogoID = "0";
