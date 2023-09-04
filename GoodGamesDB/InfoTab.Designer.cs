@@ -149,7 +149,7 @@
             PnlContent.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
             PnlContent.Location = new Point(0, 0);
             PnlContent.Name = "PnlContent";
-            PnlContent.Size = new Size(883, 455);
+            PnlContent.Size = new Size(883, 516);
             PnlContent.TabIndex = 0;
             PnlContent.MouseMove += PnlContent_MouseMove;
             // 
@@ -161,7 +161,7 @@
             textBoxYear.FlatStyle = FlatStyle.Flat;
             textBoxYear.FormattingEnabled = true;
             textBoxYear.Items.AddRange(new object[] { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029" });
-            textBoxYear.Location = new Point(533, 420);
+            textBoxYear.Location = new Point(533, 476);
             textBoxYear.Name = "textBoxYear";
             textBoxYear.Size = new Size(103, 22);
             textBoxYear.TabIndex = 159;
@@ -175,7 +175,7 @@
             textBoxMonth.FlatStyle = FlatStyle.Flat;
             textBoxMonth.FormattingEnabled = true;
             textBoxMonth.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
-            textBoxMonth.Location = new Point(467, 420);
+            textBoxMonth.Location = new Point(467, 476);
             textBoxMonth.Name = "textBoxMonth";
             textBoxMonth.Size = new Size(60, 22);
             textBoxMonth.TabIndex = 158;
@@ -190,7 +190,7 @@
             textBoxDay.FlatStyle = FlatStyle.Flat;
             textBoxDay.FormattingEnabled = true;
             textBoxDay.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
-            textBoxDay.Location = new Point(401, 420);
+            textBoxDay.Location = new Point(401, 476);
             textBoxDay.Name = "textBoxDay";
             textBoxDay.Size = new Size(60, 22);
             textBoxDay.TabIndex = 157;
@@ -199,9 +199,9 @@
             // 
             // Pnl_HideDate
             // 
-            Pnl_HideDate.Location = new Point(401, 422);
+            Pnl_HideDate.Location = new Point(401, 478);
             Pnl_HideDate.Name = "Pnl_HideDate";
-            Pnl_HideDate.Size = new Size(128, 20);
+            Pnl_HideDate.Size = new Size(128, 23);
             Pnl_HideDate.TabIndex = 160;
             Pnl_HideDate.Visible = false;
             // 
@@ -210,7 +210,7 @@
             Lbl_Date.AutoSize = true;
             Lbl_Date.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             Lbl_Date.ForeColor = SystemColors.ScrollBar;
-            Lbl_Date.Location = new Point(313, 422);
+            Lbl_Date.Location = new Point(313, 478);
             Lbl_Date.Name = "Lbl_Date";
             Lbl_Date.Size = new Size(165, 16);
             Lbl_Date.TabIndex = 156;
@@ -220,9 +220,9 @@
             // 
             BtnCancel.BackColor = Color.LightYellow;
             BtnCancel.FlatStyle = FlatStyle.Popup;
-            BtnCancel.Location = new Point(734, 357);
+            BtnCancel.Location = new Point(734, 405);
             BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(135, 23);
+            BtnCancel.Size = new Size(135, 26);
             BtnCancel.TabIndex = 155;
             BtnCancel.Text = "Cancel";
             BtnCancel.TextAlign = ContentAlignment.MiddleLeft;
@@ -234,9 +234,9 @@
             // 
             BtnDeleteConfirm.BackColor = Color.IndianRed;
             BtnDeleteConfirm.FlatStyle = FlatStyle.Popup;
-            BtnDeleteConfirm.Location = new Point(734, 386);
+            BtnDeleteConfirm.Location = new Point(734, 437);
             BtnDeleteConfirm.Name = "BtnDeleteConfirm";
-            BtnDeleteConfirm.Size = new Size(135, 23);
+            BtnDeleteConfirm.Size = new Size(135, 26);
             BtnDeleteConfirm.TabIndex = 154;
             BtnDeleteConfirm.Text = "Confirm Delete";
             BtnDeleteConfirm.TextAlign = ContentAlignment.MiddleLeft;
@@ -247,9 +247,9 @@
             // BtnSaveChanges2
             // 
             BtnSaveChanges2.Image = (Image)resources.GetObject("BtnSaveChanges2.Image");
-            BtnSaveChanges2.Location = new Point(841, 415);
+            BtnSaveChanges2.Location = new Point(841, 470);
             BtnSaveChanges2.Name = "BtnSaveChanges2";
-            BtnSaveChanges2.Size = new Size(30, 30);
+            BtnSaveChanges2.Size = new Size(30, 34);
             BtnSaveChanges2.SizeMode = PictureBoxSizeMode.Zoom;
             BtnSaveChanges2.TabIndex = 147;
             BtnSaveChanges2.TabStop = false;
@@ -259,9 +259,9 @@
             // 
             BtnSaveChanges.BackColor = Color.FromArgb(33, 191, 146);
             BtnSaveChanges.FlatStyle = FlatStyle.Popup;
-            BtnSaveChanges.Location = new Point(734, 419);
+            BtnSaveChanges.Location = new Point(734, 475);
             BtnSaveChanges.Name = "BtnSaveChanges";
-            BtnSaveChanges.Size = new Size(135, 23);
+            BtnSaveChanges.Size = new Size(135, 26);
             BtnSaveChanges.TabIndex = 153;
             BtnSaveChanges.Text = "Save Changes";
             BtnSaveChanges.TextAlign = ContentAlignment.MiddleLeft;
@@ -273,9 +273,9 @@
             // 
             BtnDelete.BackColor = SystemColors.ScrollBar;
             BtnDelete.FlatStyle = FlatStyle.Popup;
-            BtnDelete.Location = new Point(734, 357);
+            BtnDelete.Location = new Point(734, 405);
             BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(136, 23);
+            BtnDelete.Size = new Size(136, 26);
             BtnDelete.TabIndex = 152;
             BtnDelete.Text = "Delete Entry   ";
             BtnDelete.TextAlign = ContentAlignment.MiddleLeft;
@@ -287,9 +287,9 @@
             // 
             BtnEditCover.BackColor = SystemColors.ScrollBar;
             BtnEditCover.FlatStyle = FlatStyle.Popup;
-            BtnEditCover.Location = new Point(734, 328);
+            BtnEditCover.Location = new Point(734, 372);
             BtnEditCover.Name = "BtnEditCover";
-            BtnEditCover.Size = new Size(136, 23);
+            BtnEditCover.Size = new Size(136, 26);
             BtnEditCover.TabIndex = 149;
             BtnEditCover.Text = "Change Cover";
             BtnEditCover.TextAlign = ContentAlignment.MiddleLeft;
@@ -300,18 +300,18 @@
             // PicLocation
             // 
             PicLocation.Image = (Image)resources.GetObject("PicLocation.Image");
-            PicLocation.Location = new Point(313, 11);
+            PicLocation.Location = new Point(313, 12);
             PicLocation.Name = "PicLocation";
-            PicLocation.Size = new Size(50, 50);
+            PicLocation.Size = new Size(50, 57);
             PicLocation.SizeMode = PictureBoxSizeMode.Zoom;
             PicLocation.TabIndex = 148;
             PicLocation.TabStop = false;
             // 
             // Pnl_HideScore
             // 
-            Pnl_HideScore.Location = new Point(378, 44);
+            Pnl_HideScore.Location = new Point(378, 45);
             Pnl_HideScore.Name = "Pnl_HideScore";
-            Pnl_HideScore.Size = new Size(258, 43);
+            Pnl_HideScore.Size = new Size(290, 29);
             Pnl_HideScore.TabIndex = 145;
             Pnl_HideScore.Visible = false;
             // 
@@ -319,9 +319,9 @@
             // 
             Edit_Note.BackColor = SystemColors.ScrollBar;
             Edit_Note.BorderStyle = BorderStyle.FixedSingle;
-            Edit_Note.Location = new Point(351, 355);
+            Edit_Note.Location = new Point(351, 402);
             Edit_Note.Name = "Edit_Note";
-            Edit_Note.Size = new Size(285, 54);
+            Edit_Note.Size = new Size(285, 61);
             Edit_Note.TabIndex = 144;
             Edit_Note.Text = "";
             Edit_Note.Visible = false;
@@ -331,7 +331,7 @@
             checkBoxBalance.AutoSize = true;
             checkBoxBalance.Checked = true;
             checkBoxBalance.CheckState = CheckState.Checked;
-            checkBoxBalance.Location = new Point(674, 300);
+            checkBoxBalance.Location = new Point(678, 301);
             checkBoxBalance.Name = "checkBoxBalance";
             checkBoxBalance.Size = new Size(15, 14);
             checkBoxBalance.TabIndex = 143;
@@ -344,7 +344,7 @@
             checkBoxPacing.AutoSize = true;
             checkBoxPacing.Checked = true;
             checkBoxPacing.CheckState = CheckState.Checked;
-            checkBoxPacing.Location = new Point(674, 269);
+            checkBoxPacing.Location = new Point(678, 270);
             checkBoxPacing.Name = "checkBoxPacing";
             checkBoxPacing.Size = new Size(15, 14);
             checkBoxPacing.TabIndex = 142;
@@ -357,7 +357,7 @@
             checkBoxContent.AutoSize = true;
             checkBoxContent.Checked = true;
             checkBoxContent.CheckState = CheckState.Checked;
-            checkBoxContent.Location = new Point(674, 239);
+            checkBoxContent.Location = new Point(678, 241);
             checkBoxContent.Name = "checkBoxContent";
             checkBoxContent.Size = new Size(15, 14);
             checkBoxContent.TabIndex = 141;
@@ -370,7 +370,7 @@
             checkBoxSound.AutoSize = true;
             checkBoxSound.Checked = true;
             checkBoxSound.CheckState = CheckState.Checked;
-            checkBoxSound.Location = new Point(674, 209);
+            checkBoxSound.Location = new Point(678, 210);
             checkBoxSound.Name = "checkBoxSound";
             checkBoxSound.Size = new Size(15, 14);
             checkBoxSound.TabIndex = 140;
@@ -383,7 +383,7 @@
             checkBoxQuality.AutoSize = true;
             checkBoxQuality.Checked = true;
             checkBoxQuality.CheckState = CheckState.Checked;
-            checkBoxQuality.Location = new Point(674, 179);
+            checkBoxQuality.Location = new Point(678, 180);
             checkBoxQuality.Name = "checkBoxQuality";
             checkBoxQuality.Size = new Size(15, 14);
             checkBoxQuality.TabIndex = 139;
@@ -396,7 +396,7 @@
             checkBoxNarrative.AutoSize = true;
             checkBoxNarrative.Checked = true;
             checkBoxNarrative.CheckState = CheckState.Checked;
-            checkBoxNarrative.Location = new Point(674, 150);
+            checkBoxNarrative.Location = new Point(678, 151);
             checkBoxNarrative.Name = "checkBoxNarrative";
             checkBoxNarrative.Size = new Size(15, 14);
             checkBoxNarrative.TabIndex = 138;
@@ -409,7 +409,7 @@
             checkBoxPresentation.AutoSize = true;
             checkBoxPresentation.Checked = true;
             checkBoxPresentation.CheckState = CheckState.Checked;
-            checkBoxPresentation.Location = new Point(674, 120);
+            checkBoxPresentation.Location = new Point(678, 120);
             checkBoxPresentation.Name = "checkBoxPresentation";
             checkBoxPresentation.Size = new Size(15, 14);
             checkBoxPresentation.TabIndex = 137;
@@ -422,7 +422,7 @@
             checkBoxGameplay.AutoSize = true;
             checkBoxGameplay.Checked = true;
             checkBoxGameplay.CheckState = CheckState.Checked;
-            checkBoxGameplay.Location = new Point(674, 89);
+            checkBoxGameplay.Location = new Point(678, 87);
             checkBoxGameplay.Name = "checkBoxGameplay";
             checkBoxGameplay.Size = new Size(15, 14);
             checkBoxGameplay.TabIndex = 136;
@@ -449,7 +449,7 @@
             Rate_Balance.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Balance.BorderStyle = BorderStyle.None;
             Rate_Balance.ForeColor = SystemColors.ScrollBar;
-            Rate_Balance.Location = new Point(623, 297);
+            Rate_Balance.Location = new Point(623, 298);
             Rate_Balance.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Balance.Name = "Rate_Balance";
             Rate_Balance.Size = new Size(45, 18);
@@ -463,7 +463,7 @@
             Rate_Pacing.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Pacing.BorderStyle = BorderStyle.None;
             Rate_Pacing.ForeColor = SystemColors.ScrollBar;
-            Rate_Pacing.Location = new Point(623, 267);
+            Rate_Pacing.Location = new Point(623, 268);
             Rate_Pacing.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Pacing.Name = "Rate_Pacing";
             Rate_Pacing.Size = new Size(45, 18);
@@ -477,7 +477,7 @@
             Rate_Content.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Content.BorderStyle = BorderStyle.None;
             Rate_Content.ForeColor = SystemColors.ScrollBar;
-            Rate_Content.Location = new Point(623, 237);
+            Rate_Content.Location = new Point(623, 239);
             Rate_Content.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Content.Name = "Rate_Content";
             Rate_Content.Size = new Size(45, 18);
@@ -491,7 +491,7 @@
             Rate_Sound.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Sound.BorderStyle = BorderStyle.None;
             Rate_Sound.ForeColor = SystemColors.ScrollBar;
-            Rate_Sound.Location = new Point(623, 207);
+            Rate_Sound.Location = new Point(623, 208);
             Rate_Sound.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Sound.Name = "Rate_Sound";
             Rate_Sound.Size = new Size(45, 18);
@@ -505,7 +505,7 @@
             Rate_Quality.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Quality.BorderStyle = BorderStyle.None;
             Rate_Quality.ForeColor = SystemColors.ScrollBar;
-            Rate_Quality.Location = new Point(623, 177);
+            Rate_Quality.Location = new Point(623, 178);
             Rate_Quality.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Quality.Name = "Rate_Quality";
             Rate_Quality.Size = new Size(45, 18);
@@ -519,7 +519,7 @@
             Rate_Narrative.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Narrative.BorderStyle = BorderStyle.None;
             Rate_Narrative.ForeColor = SystemColors.ScrollBar;
-            Rate_Narrative.Location = new Point(623, 147);
+            Rate_Narrative.Location = new Point(623, 148);
             Rate_Narrative.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Narrative.Name = "Rate_Narrative";
             Rate_Narrative.Size = new Size(45, 18);
@@ -533,7 +533,7 @@
             Rate_Presentation.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Presentation.BorderStyle = BorderStyle.None;
             Rate_Presentation.ForeColor = SystemColors.ScrollBar;
-            Rate_Presentation.Location = new Point(623, 117);
+            Rate_Presentation.Location = new Point(623, 118);
             Rate_Presentation.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Presentation.Name = "Rate_Presentation";
             Rate_Presentation.Size = new Size(45, 18);
@@ -547,7 +547,7 @@
             Rate_Gameplay.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Gameplay.BorderStyle = BorderStyle.None;
             Rate_Gameplay.ForeColor = SystemColors.ScrollBar;
-            Rate_Gameplay.Location = new Point(623, 87);
+            Rate_Gameplay.Location = new Point(623, 86);
             Rate_Gameplay.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Gameplay.Name = "Rate_Gameplay";
             Rate_Gameplay.Size = new Size(45, 18);
@@ -560,7 +560,7 @@
             // 
             Edit_Name.BackColor = SystemColors.ScrollBar;
             Edit_Name.BorderStyle = BorderStyle.FixedSingle;
-            Edit_Name.Location = new Point(378, 21);
+            Edit_Name.Location = new Point(378, 24);
             Edit_Name.Name = "Edit_Name";
             Edit_Name.Size = new Size(290, 22);
             Edit_Name.TabIndex = 126;
@@ -569,9 +569,9 @@
             // Pic_Note
             // 
             Pic_Note.Image = (Image)resources.GetObject("Pic_Note.Image");
-            Pic_Note.Location = new Point(315, 355);
+            Pic_Note.Location = new Point(315, 402);
             Pic_Note.Name = "Pic_Note";
-            Pic_Note.Size = new Size(30, 30);
+            Pic_Note.Size = new Size(30, 34);
             Pic_Note.SizeMode = PictureBoxSizeMode.Zoom;
             Pic_Note.TabIndex = 125;
             Pic_Note.TabStop = false;
@@ -581,7 +581,7 @@
             // 
             TextNote.AutoSize = true;
             TextNote.ForeColor = SystemColors.ScrollBar;
-            TextNote.Location = new Point(351, 361);
+            TextNote.Location = new Point(351, 409);
             TextNote.Name = "TextNote";
             TextNote.Size = new Size(54, 14);
             TextNote.TabIndex = 124;
@@ -591,9 +591,9 @@
             // BtnEdit
             // 
             BtnEdit.Image = (Image)resources.GetObject("BtnEdit.Image");
-            BtnEdit.Location = new Point(804, 11);
+            BtnEdit.Location = new Point(804, 12);
             BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(30, 30);
+            BtnEdit.Size = new Size(30, 34);
             BtnEdit.SizeMode = PictureBoxSizeMode.Zoom;
             BtnEdit.TabIndex = 123;
             BtnEdit.TabStop = false;
@@ -603,7 +603,7 @@
             // 
             Lbl_Impression.AutoSize = true;
             Lbl_Impression.ForeColor = Color.White;
-            Lbl_Impression.Location = new Point(621, 327);
+            Lbl_Impression.Location = new Point(621, 328);
             Lbl_Impression.Name = "Lbl_Impression";
             Lbl_Impression.Size = new Size(15, 14);
             Lbl_Impression.TabIndex = 121;
@@ -613,7 +613,7 @@
             // 
             Lbl_Balance.AutoSize = true;
             Lbl_Balance.ForeColor = Color.White;
-            Lbl_Balance.Location = new Point(621, 297);
+            Lbl_Balance.Location = new Point(621, 298);
             Lbl_Balance.Name = "Lbl_Balance";
             Lbl_Balance.Size = new Size(15, 14);
             Lbl_Balance.TabIndex = 120;
@@ -623,7 +623,7 @@
             // 
             Lbl_Pacing.AutoSize = true;
             Lbl_Pacing.ForeColor = Color.White;
-            Lbl_Pacing.Location = new Point(621, 267);
+            Lbl_Pacing.Location = new Point(621, 268);
             Lbl_Pacing.Name = "Lbl_Pacing";
             Lbl_Pacing.Size = new Size(15, 14);
             Lbl_Pacing.TabIndex = 119;
@@ -633,7 +633,7 @@
             // 
             Lbl_Content.AutoSize = true;
             Lbl_Content.ForeColor = Color.White;
-            Lbl_Content.Location = new Point(621, 236);
+            Lbl_Content.Location = new Point(621, 239);
             Lbl_Content.Name = "Lbl_Content";
             Lbl_Content.Size = new Size(15, 14);
             Lbl_Content.TabIndex = 118;
@@ -643,7 +643,7 @@
             // 
             Lbl_Sound.AutoSize = true;
             Lbl_Sound.ForeColor = Color.White;
-            Lbl_Sound.Location = new Point(621, 206);
+            Lbl_Sound.Location = new Point(621, 208);
             Lbl_Sound.Name = "Lbl_Sound";
             Lbl_Sound.Size = new Size(15, 14);
             Lbl_Sound.TabIndex = 117;
@@ -653,7 +653,7 @@
             // 
             Lbl_Quality.AutoSize = true;
             Lbl_Quality.ForeColor = Color.White;
-            Lbl_Quality.Location = new Point(621, 176);
+            Lbl_Quality.Location = new Point(621, 178);
             Lbl_Quality.Name = "Lbl_Quality";
             Lbl_Quality.Size = new Size(15, 14);
             Lbl_Quality.TabIndex = 116;
@@ -663,7 +663,7 @@
             // 
             Lbl_Narrative.AutoSize = true;
             Lbl_Narrative.ForeColor = Color.White;
-            Lbl_Narrative.Location = new Point(621, 147);
+            Lbl_Narrative.Location = new Point(621, 148);
             Lbl_Narrative.Name = "Lbl_Narrative";
             Lbl_Narrative.Size = new Size(15, 14);
             Lbl_Narrative.TabIndex = 115;
@@ -673,7 +673,7 @@
             // 
             Lbl_Presentation.AutoSize = true;
             Lbl_Presentation.ForeColor = Color.White;
-            Lbl_Presentation.Location = new Point(621, 117);
+            Lbl_Presentation.Location = new Point(621, 118);
             Lbl_Presentation.Name = "Lbl_Presentation";
             Lbl_Presentation.Size = new Size(15, 14);
             Lbl_Presentation.TabIndex = 114;
@@ -683,7 +683,7 @@
             // 
             Lbl_Gameplay.AutoSize = true;
             Lbl_Gameplay.ForeColor = Color.White;
-            Lbl_Gameplay.Location = new Point(621, 87);
+            Lbl_Gameplay.Location = new Point(621, 86);
             Lbl_Gameplay.Name = "Lbl_Gameplay";
             Lbl_Gameplay.Size = new Size(15, 14);
             Lbl_Gameplay.TabIndex = 113;
@@ -694,7 +694,7 @@
             Lbl_Name.AutoSize = true;
             Lbl_Name.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_Name.ForeColor = SystemColors.ScrollBar;
-            Lbl_Name.Location = new Point(378, 20);
+            Lbl_Name.Location = new Point(378, 23);
             Lbl_Name.Name = "Lbl_Name";
             Lbl_Name.Size = new Size(83, 18);
             Lbl_Name.TabIndex = 112;
@@ -703,9 +703,9 @@
             // BtnCloseView
             // 
             BtnCloseView.Image = (Image)resources.GetObject("BtnCloseView.Image");
-            BtnCloseView.Location = new Point(840, 11);
+            BtnCloseView.Location = new Point(840, 12);
             BtnCloseView.Name = "BtnCloseView";
-            BtnCloseView.Size = new Size(30, 30);
+            BtnCloseView.Size = new Size(30, 34);
             BtnCloseView.SizeMode = PictureBoxSizeMode.Zoom;
             BtnCloseView.TabIndex = 1;
             BtnCloseView.TabStop = false;
@@ -715,16 +715,16 @@
             // 
             PicBoxCover.Location = new Point(-1, 1);
             PicBoxCover.Name = "PicBoxCover";
-            PicBoxCover.Size = new Size(300, 450);
+            PicBoxCover.Size = new Size(300, 510);
             PicBoxCover.TabIndex = 0;
             PicBoxCover.TabStop = false;
             // 
             // InfoTab
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
-            ClientSize = new Size(883, 455);
+            ClientSize = new Size(883, 516);
             Controls.Add(PnlContent);
             FormBorderStyle = FormBorderStyle.None;
             Name = "InfoTab";

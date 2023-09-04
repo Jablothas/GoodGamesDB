@@ -61,7 +61,7 @@ namespace GoodGamesDB
             PicBoxCover.Image = Image.FromFile($"img/grid/{Item[0]["img"]}");
             PicBoxCover.SizeMode = PictureBoxSizeMode.Zoom;
             // Logo from location
-            PicLocation.Location= new Point(315, 20);   
+            PicLocation.Location = new Point(315, 20);
             switch (Item[0]["location"].ToString().ToUpper())
             {
                 case "STEAM":
@@ -612,7 +612,7 @@ namespace GoodGamesDB
                     $"impression = '{Rate_Impression.Value}', " +
                     $"sum = '{SumScore}', " +
                     $"img = '{Cover_Path}' " +
-                    $"WHERE rId = '{CurrentItemRId}'";              
+                    $"WHERE rId = '{CurrentItemRId}'";
                 SQLiteCommand InsertSQL2 = new SQLiteCommand(query, conn);
                 InsertSQL2 = new SQLiteCommand(query, conn);
                 InsertSQL2.ExecuteNonQuery();

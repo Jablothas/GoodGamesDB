@@ -142,15 +142,15 @@
             PnlContent.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
             PnlContent.Location = new Point(0, 0);
             PnlContent.Name = "PnlContent";
-            PnlContent.Size = new Size(1177, 582);
+            PnlContent.Size = new Size(1177, 660);
             PnlContent.TabIndex = 0;
             // 
             // BtnCloseInput
             // 
             BtnCloseInput.Image = (Image)resources.GetObject("BtnCloseInput.Image");
-            BtnCloseInput.Location = new Point(1142, 12);
+            BtnCloseInput.Location = new Point(1142, 14);
             BtnCloseInput.Name = "BtnCloseInput";
-            BtnCloseInput.Size = new Size(23, 23);
+            BtnCloseInput.Size = new Size(23, 26);
             BtnCloseInput.SizeMode = PictureBoxSizeMode.Zoom;
             BtnCloseInput.TabIndex = 124;
             BtnCloseInput.TabStop = false;
@@ -160,9 +160,9 @@
             // 
             // PnlHideScores
             // 
-            PnlHideScores.Location = new Point(756, 424);
+            PnlHideScores.Location = new Point(756, 481);
             PnlHideScores.Name = "PnlHideScores";
-            PnlHideScores.Size = new Size(409, 146);
+            PnlHideScores.Size = new Size(409, 165);
             PnlHideScores.TabIndex = 123;
             PnlHideScores.Visible = false;
             // 
@@ -174,9 +174,9 @@
             BtnReset.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnReset.FlatStyle = FlatStyle.Flat;
             BtnReset.ForeColor = Color.WhiteSmoke;
-            BtnReset.Location = new Point(482, 516);
+            BtnReset.Location = new Point(482, 585);
             BtnReset.Name = "BtnReset";
-            BtnReset.Size = new Size(106, 26);
+            BtnReset.Size = new Size(106, 29);
             BtnReset.TabIndex = 122;
             BtnReset.Text = "Reset";
             BtnReset.UseVisualStyleBackColor = false;
@@ -199,7 +199,7 @@
             checkBoxPacing.AutoSize = true;
             checkBoxPacing.Checked = true;
             checkBoxPacing.CheckState = CheckState.Checked;
-            checkBoxPacing.Location = new Point(1127, 283);
+            checkBoxPacing.Location = new Point(1127, 284);
             checkBoxPacing.Name = "checkBoxPacing";
             checkBoxPacing.Size = new Size(15, 14);
             checkBoxPacing.TabIndex = 120;
@@ -211,7 +211,7 @@
             checkBoxContent.AutoSize = true;
             checkBoxContent.Checked = true;
             checkBoxContent.CheckState = CheckState.Checked;
-            checkBoxContent.Location = new Point(1127, 253);
+            checkBoxContent.Location = new Point(1127, 255);
             checkBoxContent.Name = "checkBoxContent";
             checkBoxContent.Size = new Size(15, 14);
             checkBoxContent.TabIndex = 119;
@@ -223,7 +223,7 @@
             checkBoxSound.AutoSize = true;
             checkBoxSound.Checked = true;
             checkBoxSound.CheckState = CheckState.Checked;
-            checkBoxSound.Location = new Point(1127, 223);
+            checkBoxSound.Location = new Point(1127, 225);
             checkBoxSound.Name = "checkBoxSound";
             checkBoxSound.Size = new Size(15, 14);
             checkBoxSound.TabIndex = 118;
@@ -235,7 +235,7 @@
             checkBoxQuality.AutoSize = true;
             checkBoxQuality.Checked = true;
             checkBoxQuality.CheckState = CheckState.Checked;
-            checkBoxQuality.Location = new Point(1127, 193);
+            checkBoxQuality.Location = new Point(1127, 194);
             checkBoxQuality.Name = "checkBoxQuality";
             checkBoxQuality.Size = new Size(15, 14);
             checkBoxQuality.TabIndex = 117;
@@ -271,7 +271,7 @@
             checkBoxGameplay.AutoSize = true;
             checkBoxGameplay.Checked = true;
             checkBoxGameplay.CheckState = CheckState.Checked;
-            checkBoxGameplay.Location = new Point(1127, 103);
+            checkBoxGameplay.Location = new Point(1127, 102);
             checkBoxGameplay.Name = "checkBoxGameplay";
             checkBoxGameplay.Size = new Size(15, 14);
             checkBoxGameplay.TabIndex = 114;
@@ -285,7 +285,7 @@
             textBoxImagePath.BackColor = Color.WhiteSmoke;
             textBoxImagePath.BorderStyle = BorderStyle.FixedSingle;
             textBoxImagePath.ForeColor = Color.Black;
-            textBoxImagePath.Location = new Point(436, 22);
+            textBoxImagePath.Location = new Point(436, 25);
             textBoxImagePath.Margin = new Padding(25, 3, 3, 3);
             textBoxImagePath.Name = "textBoxImagePath";
             textBoxImagePath.Size = new Size(323, 22);
@@ -297,7 +297,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ScrollBar;
-            label8.Location = new Point(756, 70);
+            label8.Location = new Point(756, 79);
             label8.Name = "label8";
             label8.Size = new Size(48, 16);
             label8.TabIndex = 112;
@@ -308,7 +308,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ScrollBar;
-            label10.Location = new Point(369, 70);
+            label10.Location = new Point(369, 79);
             label10.Name = "label10";
             label10.Size = new Size(79, 16);
             label10.TabIndex = 111;
@@ -319,7 +319,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ScrollBar;
-            label9.Location = new Point(43, 26);
+            label9.Location = new Point(43, 29);
             label9.Name = "label9";
             label9.Size = new Size(250, 18);
             label9.TabIndex = 110;
@@ -329,7 +329,7 @@
             // 
             pictureBoxCover.BackColor = Color.FromArgb(20, 20, 20);
             pictureBoxCover.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxCover.Location = new Point(43, 101);
+            pictureBoxCover.Location = new Point(43, 114);
             pictureBoxCover.Name = "pictureBoxCover";
             pictureBoxCover.Size = new Size(300, 450);
             pictureBoxCover.TabIndex = 109;
@@ -344,9 +344,9 @@
             BtnExit.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnExit.FlatStyle = FlatStyle.Flat;
             BtnExit.ForeColor = Color.WhiteSmoke;
-            BtnExit.Location = new Point(794, 303);
+            BtnExit.Location = new Point(794, 343);
             BtnExit.Name = "BtnExit";
-            BtnExit.Size = new Size(106, 26);
+            BtnExit.Size = new Size(106, 29);
             BtnExit.TabIndex = 108;
             BtnExit.Text = "Exit";
             BtnExit.UseVisualStyleBackColor = false;
@@ -358,7 +358,7 @@
             LblAddContentConfirm.AutoSize = true;
             LblAddContentConfirm.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             LblAddContentConfirm.ForeColor = Color.DarkGray;
-            LblAddContentConfirm.Location = new Point(370, 442);
+            LblAddContentConfirm.Location = new Point(370, 501);
             LblAddContentConfirm.Name = "LblAddContentConfirm";
             LblAddContentConfirm.Size = new Size(0, 16);
             LblAddContentConfirm.TabIndex = 105;
@@ -369,9 +369,9 @@
             BtnAddContent.BackColor = Color.WhiteSmoke;
             BtnAddContent.FlatStyle = FlatStyle.Flat;
             BtnAddContent.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnAddContent.Location = new Point(576, 266);
+            BtnAddContent.Location = new Point(576, 301);
             BtnAddContent.Name = "BtnAddContent";
-            BtnAddContent.Size = new Size(116, 26);
+            BtnAddContent.Size = new Size(116, 29);
             BtnAddContent.TabIndex = 104;
             BtnAddContent.Text = "Add DLC";
             BtnAddContent.UseVisualStyleBackColor = false;
@@ -382,9 +382,9 @@
             BtnSetReplay.BackColor = Color.WhiteSmoke;
             BtnSetReplay.FlatStyle = FlatStyle.Flat;
             BtnSetReplay.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnSetReplay.Location = new Point(576, 169);
+            BtnSetReplay.Location = new Point(576, 192);
             BtnSetReplay.Name = "BtnSetReplay";
-            BtnSetReplay.Size = new Size(116, 26);
+            BtnSetReplay.Size = new Size(116, 29);
             BtnSetReplay.TabIndex = 103;
             BtnSetReplay.Text = "Replay";
             BtnSetReplay.UseVisualStyleBackColor = false;
@@ -397,7 +397,7 @@
             label1.FlatStyle = FlatStyle.System;
             label1.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(368, 249);
+            label1.Location = new Point(368, 282);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
             label1.Size = new Size(129, 16);
@@ -411,7 +411,7 @@
             textBoxAdditionalContent.BackColor = Color.WhiteSmoke;
             textBoxAdditionalContent.BorderStyle = BorderStyle.FixedSingle;
             textBoxAdditionalContent.ForeColor = Color.Black;
-            textBoxAdditionalContent.Location = new Point(368, 268);
+            textBoxAdditionalContent.Location = new Point(368, 304);
             textBoxAdditionalContent.Margin = new Padding(25, 3, 3, 3);
             textBoxAdditionalContent.Name = "textBoxAdditionalContent";
             textBoxAdditionalContent.Size = new Size(202, 22);
@@ -434,9 +434,9 @@
             BtnSave.FlatAppearance.MouseOverBackColor = Color.DimGray;
             BtnSave.FlatStyle = FlatStyle.Flat;
             BtnSave.ForeColor = Color.Black;
-            BtnSave.Location = new Point(370, 516);
+            BtnSave.Location = new Point(370, 585);
             BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(106, 26);
+            BtnSave.Size = new Size(106, 29);
             BtnSave.TabIndex = 98;
             BtnSave.Text = "Save";
             BtnSave.UseVisualStyleBackColor = false;
@@ -450,7 +450,7 @@
             textBoxYear.FlatStyle = FlatStyle.Flat;
             textBoxYear.FormattingEnabled = true;
             textBoxYear.Items.AddRange(new object[] { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029" });
-            textBoxYear.Location = new Point(502, 219);
+            textBoxYear.Location = new Point(502, 248);
             textBoxYear.Name = "textBoxYear";
             textBoxYear.Size = new Size(94, 22);
             textBoxYear.TabIndex = 74;
@@ -463,7 +463,7 @@
             textBoxMonth.FlatStyle = FlatStyle.Flat;
             textBoxMonth.FormattingEnabled = true;
             textBoxMonth.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
-            textBoxMonth.Location = new Point(436, 219);
+            textBoxMonth.Location = new Point(436, 248);
             textBoxMonth.Name = "textBoxMonth";
             textBoxMonth.Size = new Size(60, 22);
             textBoxMonth.TabIndex = 73;
@@ -477,7 +477,7 @@
             textBoxDay.FlatStyle = FlatStyle.Flat;
             textBoxDay.FormattingEnabled = true;
             textBoxDay.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" });
-            textBoxDay.Location = new Point(370, 219);
+            textBoxDay.Location = new Point(370, 248);
             textBoxDay.Name = "textBoxDay";
             textBoxDay.Size = new Size(60, 22);
             textBoxDay.TabIndex = 72;
@@ -491,7 +491,7 @@
             textBoxLocation.FlatStyle = FlatStyle.Flat;
             textBoxLocation.FormattingEnabled = true;
             textBoxLocation.Items.AddRange(new object[] { "Steam", "Epic Game Store", "Ubisoft Connect", "GOG.com", "Battle.net", "Xbox Game Pass", "PlayStation", "Nintendo Switch", "Mobile" });
-            textBoxLocation.Location = new Point(370, 171);
+            textBoxLocation.Location = new Point(370, 194);
             textBoxLocation.Name = "textBoxLocation";
             textBoxLocation.Size = new Size(200, 22);
             textBoxLocation.TabIndex = 71;
@@ -502,7 +502,7 @@
             Rate_Impression.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Impression.BorderStyle = BorderStyle.None;
             Rate_Impression.ForeColor = SystemColors.ScrollBar;
-            Rate_Impression.Location = new Point(1076, 341);
+            Rate_Impression.Location = new Point(1076, 342);
             Rate_Impression.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Impression.Name = "Rate_Impression";
             Rate_Impression.Size = new Size(45, 18);
@@ -606,7 +606,7 @@
             Rate_Gameplay.BackColor = Color.FromArgb(10, 10, 10);
             Rate_Gameplay.BorderStyle = BorderStyle.None;
             Rate_Gameplay.ForeColor = SystemColors.ScrollBar;
-            Rate_Gameplay.Location = new Point(1076, 101);
+            Rate_Gameplay.Location = new Point(1076, 100);
             Rate_Gameplay.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             Rate_Gameplay.Name = "Rate_Gameplay";
             Rate_Gameplay.Size = new Size(45, 18);
@@ -619,7 +619,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.ScrollBar;
-            label5.Location = new Point(43, 70);
+            label5.Location = new Point(43, 79);
             label5.Name = "label5";
             label5.Size = new Size(50, 16);
             label5.TabIndex = 91;
@@ -630,7 +630,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(368, 298);
+            label7.Location = new Point(368, 338);
             label7.Name = "label7";
             label7.Size = new Size(38, 16);
             label7.TabIndex = 90;
@@ -641,11 +641,11 @@
             textBoxNote.BackColor = Color.WhiteSmoke;
             textBoxNote.BorderStyle = BorderStyle.FixedSingle;
             textBoxNote.ForeColor = Color.Black;
-            textBoxNote.Location = new Point(368, 317);
+            textBoxNote.Location = new Point(368, 359);
             textBoxNote.Margin = new Padding(25, 3, 3, 3);
             textBoxNote.Multiline = true;
             textBoxNote.Name = "textBoxNote";
-            textBoxNote.Size = new Size(327, 111);
+            textBoxNote.Size = new Size(327, 126);
             textBoxNote.TabIndex = 76;
             // 
             // label6
@@ -653,7 +653,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ScrollBar;
-            label6.Location = new Point(602, 201);
+            label6.Location = new Point(602, 228);
             label6.Name = "label6";
             label6.Size = new Size(91, 16);
             label6.TabIndex = 89;
@@ -664,7 +664,7 @@
             textBoxPlaytime.BackColor = Color.WhiteSmoke;
             textBoxPlaytime.BorderStyle = BorderStyle.FixedSingle;
             textBoxPlaytime.ForeColor = Color.Black;
-            textBoxPlaytime.Location = new Point(601, 219);
+            textBoxPlaytime.Location = new Point(601, 248);
             textBoxPlaytime.Margin = new Padding(25, 3, 3, 3);
             textBoxPlaytime.Name = "textBoxPlaytime";
             textBoxPlaytime.Size = new Size(91, 22);
@@ -675,7 +675,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(369, 200);
+            label4.Location = new Point(369, 227);
             label4.Name = "label4";
             label4.Size = new Size(38, 16);
             label4.TabIndex = 82;
@@ -686,7 +686,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(369, 151);
+            label3.Location = new Point(369, 171);
             label3.Name = "label3";
             label3.Size = new Size(63, 16);
             label3.TabIndex = 79;
@@ -699,7 +699,7 @@
             label2.FlatStyle = FlatStyle.System;
             label2.Font = new Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(369, 100);
+            label2.Location = new Point(369, 113);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(43, 16);
@@ -713,7 +713,7 @@
             textBoxGame.BackColor = Color.WhiteSmoke;
             textBoxGame.BorderStyle = BorderStyle.FixedSingle;
             textBoxGame.ForeColor = Color.Black;
-            textBoxGame.Location = new Point(369, 121);
+            textBoxGame.Location = new Point(369, 137);
             textBoxGame.Margin = new Padding(25, 3, 3, 3);
             textBoxGame.Name = "textBoxGame";
             textBoxGame.Size = new Size(323, 22);
@@ -722,10 +722,10 @@
             // 
             // Input
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
-            ClientSize = new Size(1177, 582);
+            ClientSize = new Size(1177, 660);
             Controls.Add(PnlContent);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
